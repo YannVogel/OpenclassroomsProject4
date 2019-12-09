@@ -21,8 +21,29 @@ require_once('../model/AdminPostManager.php');
     <header class="container-fluid pl-0 pr-0">
         <div class="col text-center">HEADER DU SITE</div>
     </header>
-
-
+<?php
+if (isset($_GET['successMessage']) AND $_GET['successMessage'] === '1')
+{?>
+    <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Fermer</span>
+        </button>
+        <strong>Réussite !</strong> Le billet a bien été publié !
+    </div>
+<?php
+}
+elseif(isset($_GET['failureMessage']) AND $_GET['failureMessage'] === '1')
+{ ?>
+    <div id='failureMessage' class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Fermer</span>
+        </button>
+        <strong>Erreur !</strong> Le billet n'a pas pu être publié !
+    </div>
+<?php
+} ?>
     <nav class="nav nav-tabs">
         <a class="nav-item nav-link active" href="#p1" data-toggle="tab">Nouveau billet</a>
         <a class="nav-item nav-link" href="#p2" data-toggle="tab">Modifier billet</a>
@@ -34,10 +55,14 @@ require_once('../model/AdminPostManager.php');
             <!-- Ici se trouve le code pour ajouter un nouveau billet -->
 
             <form action="../controller/createPost.php" class="container" method="post">
-                <label for="newPostTitle">Titre du billet : </label>
-                <input id="newPostTitle" name="newPostTitle" type="text" class="form-control">
-                <label for="newPostContent">Contenu du billet : </label>
-                <textarea id="newPostContent" name="newPostContent" class="form-control">Contenu de votre billet</textarea>
+                <div class="form-group">
+                    <label for="newPostTitle">Titre du billet : </label>
+                    <input id="newPostTitle" name="newPostTitle" type="text" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPostContent">Contenu du billet : </label>
+                    <textarea id="newPostContent" name="newPostContent" class="form-control" required>Votre texte</textarea>
+                </div>
                 <input type="submit" value="Valider" />
             </form>
 
@@ -46,22 +71,25 @@ require_once('../model/AdminPostManager.php');
         </div>
         <div class="tab-pane" id="p2">
             <!-- Ici se trouve le code pour modifier un billet existant -->
-
             <?php
-            $myAdmin = new AdminPostManager();
-            $posts = $myAdmin->getPosts();
+            if(!isset($_GET['postId']))
+            {
+                $myAdmin = new AdminPostManager();
+                $posts = $myAdmin->getPosts();
 
-            while ($data = $posts->fetch())
-            {?>
-                <h2>
-                    <a href="../controller/editPost.php&postId=<?= $data['post_id'] ?>"><?= $data['post_title'] ?></a>
-                </h2>
-                <div>
-                    <?= $data['post_content'] ?>
-                </div>
-            <?php
+                while ($data = $posts->fetch())
+                {?>
+                    <h2>
+                        <a href="../controller/editPost.php?postId=<?= $data['post_id'] ?>"><?= $data['post_title'] ?></a>
+                    </h2>
+                <?php
+                }
+                $posts->closeCursor();
+
+            } elseif(isset($_GET['postId']) && $_GET['postId'] > 0) {
+                ?> TEST <?php
+
             }
-            $posts->closeCursor();
             ?>
         </div>
         <div class="tab-pane" id="p3">
@@ -81,8 +109,9 @@ require_once('../model/AdminPostManager.php');
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="../../public/js/javascript.js"></script>
 </body>
 </html>
