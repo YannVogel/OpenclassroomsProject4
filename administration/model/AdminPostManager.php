@@ -5,7 +5,6 @@ class AdminPostManager extends PostManager
 {
     public function createPost($postTitle, $postContent)
     {
-        //create a new post from a form contents
         $db = $this->databaseConnect();
         $req = $db->prepare('INSERT INTO posts_table(post_title, post_content, post_date) VALUES(?, ?, NOW())');
         $req->execute(array($postTitle, $postContent));
@@ -13,11 +12,15 @@ class AdminPostManager extends PostManager
 
     public function editPost($postId, $postTitle, $postContent)
     {
-        //edit a post from a form contents
+        $db = $this->databaseConnect();
+        $req = $db->prepare('UPDATE posts_table SET post_title = ?, post_content = ?, post_date = NOW() WHERE post_id = ?');
+        $req->execute(array($postTitle, $postContent, $postId));
     }
 
     public function deletePost($postId)
     {
-        //delete a post
+        $db = $this->databaseConnect();
+        $req = $db->prepare('DELETE FROM posts_table WHERE post_id= ?');
+        $req->execute(array($postId));
     }
 }

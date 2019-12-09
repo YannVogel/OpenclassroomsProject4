@@ -5,12 +5,9 @@ if(isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset
 {
     $myAdmin = new AdminPostManager();
     $myAdmin->createPost($_POST['newPostTitle'], $_POST['newPostContent']);
-    require('../view/adminView.php');
-} else
-{ ?>
-    <div>Une erreur s'est produite.<br />
-        <a href="../view/adminView.php">Revenir en arrière.</a>
-    </div>
 
-<?php
+    header('Location: ../indexAdmin.php?newPostSuccessMessage=1');
+} else
+{
+    header('Location: ../indexAdmin.php?newPostFailureMessage=1');
 }
