@@ -7,7 +7,7 @@ class PostManager extends Manager
     {
         $db = $this->databaseConnect();
 
-        return $db->query('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table ORDER BY post_date');
+        return $db->query('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table ORDER BY post_id DESC');
     }
 
     public function getPost($postId)

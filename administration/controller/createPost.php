@@ -6,8 +6,8 @@ if(isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset
     $myAdmin = new AdminPostManager();
     $myAdmin->createPost($_POST['newPostTitle'], $_POST['newPostContent']);
 
-    header('Location: ../view/adminView.php?successMessage=1');
+    header('Location: ../indexAdmin.php?newPostSuccessMessage=1');
 } else
 {
-    header('Location: ../view/adminView.php?failureMessage=1');
+    header('Location: ../indexAdmin.php?newPostFailureMessage=1');
 }
