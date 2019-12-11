@@ -1,0 +1,17 @@
+{
+    "name": "animh/openclassrooms-project4",
+    "authors": [
+        {
+            "name": "Flawxy",
+            "email": "58270365+Flawxy@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "Project\\Model\\Entity": "model/entity/",
+            "Project\\Model\\Manager": "model/manager/",
+            "Project\\Controller": "controller/"
+        }
+    }
+}

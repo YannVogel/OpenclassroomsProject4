@@ -1,5 +1,9 @@
 <?php
-require_once('model/Manager.php');
+
+namespace Project\Model\Manager;
+
+use Project\Model\Entity\CommentEntity;
+use Project\Model\Manager\Manager;
 
 class CommentManager extends Manager
 {
@@ -12,10 +16,10 @@ class CommentManager extends Manager
         return $comments;
     }
 
-    public function postComment($postId, $author, $content)
+    public function addComment(CommentEntity $comment)
     {
         $db = $this->databaseConnect();
         $comments = $db->prepare('INSERT INTO comments_table(related_post_id, comment_author, comment_content, comment_date) VALUES(?, ?, ?, NOW())');
-        $comments->execute(array($postId, $author, $content));
+        $comments->execute(array($comment->getCommentId(), $comment->getCommentAuthor(), $comment->getCommmentContent()));
     }
 }
