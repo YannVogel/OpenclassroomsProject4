@@ -1,5 +1,9 @@
 <?php
-require_once('Manager.php');
+
+namespace Project\Model\Manager;
+
+use Project\Model\Entity\PostEntity;
+use Project\Model\Manager\Manager;
 
 class PostManager extends Manager
 {
@@ -7,7 +11,10 @@ class PostManager extends Manager
     {
         $db = $this->databaseConnect();
 
-        return $db->query('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table ORDER BY post_id DESC');
+        $req = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table ORDER BY post_id DESC');
+        $req->execute();
+
+        return $req->fetchAll(\PDO::FETCH_CLASS, PostEntity::class);
     }
 
     public function getPost($postId)
