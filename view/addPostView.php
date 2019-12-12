@@ -28,7 +28,7 @@ if(isset($_GET['newPostFailureMessage']) AND $_GET['newPostFailureMessage'] === 
 
 <!-- Ici se trouve le code pour ajouter un nouveau billet -->
 
-<form action="controller/createPost.php" class="container" method="post">
+<form action="index.php" class="container" method="post">
     <div class="form-group">
         <label for="newPostTitle">Titre du billet : </label>
         <input id="newPostTitle" name="newPostTitle" type="text" class="form-control" required>
@@ -39,11 +39,6 @@ if(isset($_GET['newPostFailureMessage']) AND $_GET['newPostFailureMessage'] === 
     </div>
     <input type="submit" value="Valider" />
 </form>
-
-
-
-
-
 
 
 

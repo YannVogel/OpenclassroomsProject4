@@ -11,7 +11,7 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getCommentId()
+    public function getCommentId() : int
     {
         return $this->comment_id;
     }
@@ -20,7 +20,7 @@ class CommentEntity
      * @param mixed $comment_id
      * @return CommentEntity
      */
-    public function setCommentId($comment_id)
+    public function setCommentId(int $comment_id)
     {
         $this->comment_id = $comment_id;
         return $this;
@@ -29,7 +29,7 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getRelatedPostId()
+    public function getRelatedPostId() : int
     {
         return $this->related_post_id;
     }
@@ -38,7 +38,7 @@ class CommentEntity
      * @param mixed $related_post_id
      * @return CommentEntity
      */
-    public function setRelatedPostId($related_post_id)
+    public function setRelatedPostId(int $related_post_id)
     {
         $this->related_post_id = $related_post_id;
         return $this;
@@ -47,7 +47,7 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getCommentAuthor()
+    public function getCommentAuthor() : string
     {
         return $this->comment_author;
     }
@@ -56,7 +56,7 @@ class CommentEntity
      * @param mixed $comment_author
      * @return CommentEntity
      */
-    public function setCommentAuthor($comment_author)
+    public function setCommentAuthor(string $comment_author)
     {
         $this->comment_author = $comment_author;
         return $this;
@@ -65,7 +65,7 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getCommmentContent()
+    public function getCommmentContent() : string
     {
         return $this->commment_content;
     }
@@ -74,7 +74,7 @@ class CommentEntity
      * @param mixed $commment_content
      * @return CommentEntity
      */
-    public function setCommmentContent($commment_content)
+    public function setCommmentContent(string $commment_content)
     {
         $this->commment_content = $commment_content;
         return $this;
@@ -101,7 +101,7 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getCommentModeration()
+    public function getCommentModeration() : int
     {
         return $this->comment_moderation;
     }
@@ -110,7 +110,7 @@ class CommentEntity
      * @param mixed $comment_moderation
      * @return CommentEntity
      */
-    public function setCommentModeration($comment_moderation)
+    public function setCommentModeration(int $comment_moderation)
     {
         $this->comment_moderation = $comment_moderation;
         return $this;

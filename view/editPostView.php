@@ -1,4 +1,8 @@
 <?php
+
+use Project\Model\Entity\PostEntity;
+use Project\Model\Manager\PostManager;
+
 if (isset($_GET['editPostSuccessMessage']) AND $_GET['editPostSuccessMessage'] === '1')
 {?>
     <div id="editPostSuccessMessage" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -27,22 +31,23 @@ if(isset($_GET['editPostFailureMessage']) AND $_GET['editPostFailureMessage'] ==
 
 <!-- Ici se trouve le code pour modifier un billet existant -->
 <?php
-if(!isset($_GET['postId'])) {
-    $myAdmin = new AdminPostManager();
-    $posts = $myAdmin->getPosts();
+if(!isset($_GET['editPostId'])) {
+    $myAdmin = new PostManager();
+    $data = $myAdmin->getPosts();
 
-    while ($data = $posts->fetch()) {
+    /** @var PostEntity $post */
+    foreach ($data as $post) {
         ?>
         <h2>
-            <a class="p2Active" href="controller/editPost.php?postId=<?= $data['post_id'] ?>"><?= $data['post_title'] ?></a>
+            <a href=".?editPostId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a>
         </h2>
         <?php
     }
-    $posts->closeCursor();
-}elseif(isset($_GET['postId']) && $_GET['postId'] > 0) {
+}elseif(isset($_GET['editPostId']) && $_GET['editPostId'] > 0) {
+    $myAdmin = new PostManager();
+    $post = $myAdmin->getPost($_GET['editPostId']);
     ?>
-
-    <form action="../controller/editPost.php?postId=<?= $_GET['postId'] ?>" class="container" method="post">
+    <form id='formEditPostView' action=".?editPostId=<?= $_GET['editPostId'] ?>" class="container" method="post">
         <div class="form-group">
             <label for="editPostTitle">Titre du billet : </label>
             <input id="editPostTitle" name="editPostTitle" type="text" class="form-control"
