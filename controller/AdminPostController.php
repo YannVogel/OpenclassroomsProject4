@@ -29,7 +29,7 @@ class AdminPostController
     public function valideEditPost() {
 
         $myAdmin = new PostManager();
-        $myAdmin->editPost($_GET['editPostId'], htmlspecialchars($_POST['editPostTitle']), htmlspecialchars($_POST['editPostContent']));
+        $myAdmin->editPost($_GET['editPostId'], htmlspecialchars($_POST['editPostTitle']), $_POST['editPostContent']);
 
         header('Location: index.php?editPostSuccessMessage=1');
     }
