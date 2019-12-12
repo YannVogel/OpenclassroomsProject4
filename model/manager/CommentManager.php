@@ -34,6 +34,8 @@ class CommentManager extends Manager
 
     public function deleteComment(int $commentId)
     {
-        //delete a selected comment
+        $db = $this->databaseConnect();
+        $req = $db->prepare('DELETE FROM comments_table WHERE comment_id= ?');
+        $req->execute(array($commentId));
     }
 }

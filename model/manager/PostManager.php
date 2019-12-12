@@ -26,21 +26,21 @@ class PostManager extends Manager
         return $post->fetch();
     }
 
-    public function createPost($postTitle, $postContent)
+    public function addPost(PostEntity $post)
     {
         $db = $this->databaseConnect();
         $req = $db->prepare('INSERT INTO posts_table(post_title, post_content, post_date) VALUES(?, ?, NOW())');
-        $req->execute(array($postTitle, $postContent));
+        $req->execute(array($post->getPostTitle(), $post->getPostContent()));
     }
 
-    public function editPost($postId, $postTitle, $postContent)
+    public function editPost(int $postId, string $postTitle, string $postContent)
     {
         $db = $this->databaseConnect();
         $req = $db->prepare('UPDATE posts_table SET post_title = ?, post_content = ?, post_date = NOW() WHERE post_id = ?');
         $req->execute(array($postTitle, $postContent, $postId));
     }
 
-    public function deletePost($postId)
+    public function deletePost(int $postId)
     {
         $db = $this->databaseConnect();
         $req = $db->prepare('DELETE FROM posts_table WHERE post_id= ?');

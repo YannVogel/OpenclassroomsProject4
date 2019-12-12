@@ -1,5 +1,7 @@
 <?php
-require_once('../model/AdminPostManager.php');
+
+use Project\Model\Entity\PostEntity;
+use Project\Model\Manager\PostManager;
 
 if (isset($_GET['deletePostSuccessMessage']) AND $_GET['deletePostSuccessMessage'] === '1')
 {?>
@@ -27,17 +29,28 @@ if(isset($_GET['deletePostFailureMessage']) AND $_GET['deletePostFailureMessage'
     <?php
 }
 // Ici se trouve le code pour supprimer un billet
-$myAdmin = new AdminPostManager();
-$posts = $myAdmin->getPosts();
+if(!isset($_GET['postId'])) {
+    $myAdmin = new PostManager();
+    $data = $myAdmin->getPosts();
 
-while ($data = $posts->fetch()) {
+    /** @var PostEntity $post */
+    foreach ($data as $post) {
+        ?>
+        <h2>
+            <a href=".?postId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a>
+        </h2>
+        <?php
+    }
+}elseif(isset($_GET['postId']) && $_GET['postId'] > 0) {
+    $myAdmin = new PostManager();
+    $post = $myAdmin->getPost($_GET['postId']);
     ?>
-    <h2>
-        <a class="p2Active" href="controller/deletePost.php?postId=<?= $data['post_id'] ?>"><?= $data['post_title'] ?></a>
-    </h2>
-    <?php
+
+    <h2><?= $post['post_title'] ?> <a href="index.php?deletePostId=<?= $_GET['postId'] ?>">EFFACER</a></h2>
+    <div><?= $post['post_content'] ?></div>
+
+
+
+<?php
 }
-$posts->closeCursor();
 ?>
-
-
