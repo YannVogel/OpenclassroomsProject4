@@ -48,9 +48,8 @@ if(!isset($_GET['postId'])) {
 
     <h2><?= $post['post_title'] ?> <a href="index.php?deletePostId=<?= $_GET['postId'] ?>">EFFACER</a></h2>
     <div><?= $post['post_content'] ?></div>
-
+    <button id="previousButton">Précédent</button>
 
 
 <?php
 }
-?>

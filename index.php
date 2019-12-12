@@ -28,7 +28,7 @@ if(isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset
 {
     $newPost->failureDeletePost();
 }else {
-    require('view/adminView.php');
+    require('view/indexView.php');
 }
 
 /*else if {droits admin}

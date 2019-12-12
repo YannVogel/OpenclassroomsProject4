@@ -17,4 +17,18 @@ class PostController
             echo $post->getPostContent();
         }
     }
+
+
+    public function displayLastPost() {
+        $postManager = new PostManager();
+        $lastPost = $postManager->getLastPost();
+
+?>
+        <section class="container">
+            <div class="col col-12 text-center"><h2 class=""><?= $lastPost['post_title']; ?></h2> le <?= $lastPost['post_date_fr']; ?></div>
+            <div class="col"><?= $lastPost['post_content']; ?></div>
+        </section>
+<?php
+
+    }
 }

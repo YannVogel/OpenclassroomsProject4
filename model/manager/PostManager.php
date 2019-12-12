@@ -26,6 +26,15 @@ class PostManager extends Manager
         return $post->fetch();
     }
 
+    public function getLastPost()
+    {
+        $db = $this->databaseConnect();
+        $lastPost = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS post_date_fr FROM posts_table ORDER BY post_id DESC LIMIT 0,1');
+        $lastPost->execute();
+
+        return $lastPost->fetch();
+    }
+
     public function addPost(PostEntity $post)
     {
         $db = $this->databaseConnect();
