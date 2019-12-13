@@ -1,5 +1,35 @@
-let tab2;
+$('#connectionButton').on('click', function() {
+    store.setLocal('nickname', $('#nicknameInput').val());
+    store.setLocal('password', $('#passwordInput').val());
+});
 
+
+
+
+$('#nicknameInput').attr("value", store.getLocal("nickname"));
+$('#passwordInput').attr("value", store.getLocal("password"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------- ADMIN PANEL ---------------------------------------- */
 $(window).on('load',function() {
     $('#newPostSuccessMessage').fadeOut(5000);
     $('#newPostFailureMessage').fadeOut(5000);
@@ -9,6 +39,9 @@ $(window).on('load',function() {
 
     $('#deletePostSuccessMessage').fadeOut(5000);
     $('#deletePostFailureMessage').fadeOut(5000);
+
+    $('#newUserSuccessMessage').fadeOut(5000);
+    $('#newUserFailureMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {

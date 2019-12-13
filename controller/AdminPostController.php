@@ -1,11 +1,8 @@
 <?php
-
-
 namespace Project\Controller;
 
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\PostManager;
-
 
 class AdminPostController
 {

@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Project\Model\Entity;
-
 
 class CommentEntity
 {
