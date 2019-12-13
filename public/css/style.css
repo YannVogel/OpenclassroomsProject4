@@ -11,3 +11,12 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+#newPostSuccessMessage, #newPostFailureMessage,
+#editPostSuccessMessage, #editPostFailureMessage,
+#deletePostSuccessMessage, #deletePostFailureMessage,
+#newUserSuccessMessage,  #newUserFailureMessage  {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}

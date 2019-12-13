@@ -7,7 +7,6 @@ use Project\Model\Manager\PostManager;
 
 class PostController
 {
-
     public function home(){
         $postManager = new PostManager();
         $data = $postManager->getPosts();
