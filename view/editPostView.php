@@ -3,30 +3,6 @@
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\PostManager;
 
-if (isset($_GET['editPostSuccessMessage']) AND $_GET['editPostSuccessMessage'] === '1')
-{?>
-    <div id="editPostSuccessMessage" class="alert alert-success alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Fermer</span>
-        </button>
-        <strong>Réussite !</strong> Le billet a bien été édité !
-    </div>
-    <?php
-}
-
-if(isset($_GET['editPostFailureMessage']) AND $_GET['editPostFailureMessage'] === '1')
-{ ?>
-    <div id="editPostFailureMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Fermer</span>
-        </button>
-        <strong>Erreur !</strong> Le billet n'a pas pu être édité !
-    </div>
-    <?php
-}
-
 ?>
 
 <!-- Ici se trouve le code pour modifier un billet existant -->
@@ -39,7 +15,7 @@ if(!isset($_GET['editPostId'])) {
     foreach ($data as $post) {
         ?>
         <h2>
-            <a href=".?editPostId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a>
+            <a href=".?adminPage=1&editPostId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a>
         </h2>
         <?php
     }

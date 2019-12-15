@@ -3,17 +3,7 @@ use Project\Controller\PostController;
 use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
-
-if(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND trim($_POST['nicknameInput']) !== "" AND trim($_POST['passwordInput']) !== "")
-{
-    $nickname = htmlspecialchars($_POST['nicknameInput']);
-    $password = htmlspecialchars($_POST['passwordInput']);
-    $_SESSION['nickname'] = $nickname;
-    $_SESSION['password'] = $password;
-}
 ?>
-
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -35,15 +25,18 @@ if(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND trim($_
                 if(!isset($_SESSION['nickname']) OR !isset($_SESSION['password']) OR trim($_SESSION['nickname']) === '' OR trim($_SESSION['password']) === '')
             {
             ?>
-            <div></div><button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa fa-key"></span></button>
-            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa fa-edit"></span></button></div>
+            <div></div><button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
+            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa faButtonRight fa-edit"></span></button></div>
             <?php
             }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
                 if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
                     ?>
-                    <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div><a href="logout.php">Se
-                        déconnecter</a>
+                    <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div>
+                    <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span class="fa faButtonRight fa-toggle-off"></span></button>
+                    <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
                     <?php
+                }else {
+                    session_destroy();
                 }
             }
             ?>

@@ -2,6 +2,7 @@ body {
     position: relative;
     height: 100vh;
 }
+
 .col {
     border: 2px black solid;
 }
@@ -15,8 +16,12 @@ footer {
 #newPostSuccessMessage, #newPostFailureMessage,
 #editPostSuccessMessage, #editPostFailureMessage,
 #deletePostSuccessMessage, #deletePostFailureMessage,
-#newUserSuccessMessage,  #newUserFailureMessage  {
+#newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage  {
     position: fixed;
     width: 100%;
     z-index: 1000;
+}
+
+.faButtonRight {
+    margin-left: 5px;
 }
