@@ -11,7 +11,7 @@
         }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
             if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
                 ?>
-                <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div>
+                <div>Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></div>
                 <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span
                         class="fa faButtonRight fa-toggle-off"></span></button>
                 <?php if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
