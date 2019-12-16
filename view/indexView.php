@@ -18,9 +18,15 @@ $myAdmin = new AdminUserController();
             if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
                 ?>
                 <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div>
-                <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span class="fa faButtonRight fa-toggle-off"></span></button>
-                <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
-                <?php
+                <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span
+                        class="fa faButtonRight fa-toggle-off"></span></button>
+                <?php if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
+                    ?>
+
+                    <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span
+                            class="fa faButtonRight fa-lock"></span></button>
+                    <?php
+                }
             }else {
                 session_destroy();
             }
