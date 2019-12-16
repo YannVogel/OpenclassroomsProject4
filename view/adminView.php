@@ -9,7 +9,7 @@ $myAdmin = new AdminUserController();
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname']))
 {
 
-    include('adminHeader.php');
+    include('adminHeaderView.php');
 ?>
 
 

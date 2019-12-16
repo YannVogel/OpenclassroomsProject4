@@ -4,7 +4,7 @@ use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
 
-include('header.php');
+include('headerView.php');
 
     $manage = new PostController;
     $manage->displayLastPost();
