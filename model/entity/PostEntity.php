@@ -4,7 +4,7 @@ namespace Project\Model\Entity;
 
 class PostEntity
 {
-    private $post_id, $post_title, $post_content, $post_date;
+    private $post_id, $post_title, $post_content, $post_date_fr;
 
     /**
      * @return mixed
@@ -60,21 +60,26 @@ class PostEntity
         return $this;
     }
 
+    public function getPostIntro() : string
+    {
+        return substr(strip_tags($this->post_content), 0, 500) . '<a href="index.php?displayPost=' . $this->getPostId() . '">...lire la suite</a>';
+    }
+
     /**
      * @return mixed
      */
     public function getPostDate()
     {
-        return $this->post_date;
+        return $this->post_date_fr;
     }
 
     /**
      * @param mixed $post_date
      * @return PostEntity
      */
-    public function setPostDate($post_date)
+    public function setPostDate($post_date_fr)
     {
-        $this->post_date = $post_date;
+        $this->post_date_fr = $post_date_fr;
         return $this;
     }
 

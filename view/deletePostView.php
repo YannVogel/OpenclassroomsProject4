@@ -20,10 +20,11 @@ if(!isset($_GET['postId'])) {
 }elseif(isset($_GET['postId']) && $_GET['postId'] > 0) {
     $myAdmin = new PostManager();
     $post = $myAdmin->getPost($_GET['postId']);
+    /** @var PostEntity $post */
     ?>
 
-    <h2><?= $post['post_title'] ?> <a href="index.php?adminPage=1&deletePostId=<?= $_GET['postId'] ?>">EFFACER</a></h2>
-    <div><?= $post['post_content'] ?></div>
+    <h2><?= $post->getPostTitle() ?> <a href="index.php?adminPage=1&deletePostId=<?= $post->getPostId() ?>">EFFACER</a></h2>
+    <div><?= $post->getPostContent() ?></div>
     <button id="previousButton">Précédent</button>
 
 

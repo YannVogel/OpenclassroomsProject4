@@ -22,16 +22,17 @@ if(!isset($_GET['editPostId'])) {
 }elseif(isset($_GET['editPostId']) && $_GET['editPostId'] > 0) {
     $myAdmin = new PostManager();
     $post = $myAdmin->getPost($_GET['editPostId']);
+    /** @var PostEntity $post */
     ?>
-    <form id='formEditPostView' action=".?editPostId=<?= $_GET['editPostId'] ?>" class="container" method="post">
+    <form id='formEditPostView' action=".?editPostId=<?= $post->getPostId() ?>" class="container" method="post">
         <div class="form-group">
             <label for="editPostTitle">Titre du billet : </label>
             <input id="editPostTitle" name="editPostTitle" type="text" class="form-control"
-                   value="<?= $post['post_title'] ?>" required>
+                   value="<?= $post->getPostTitle() ?>" required>
         </div>
         <div class="form-group">
             <label for="editPostContent">Contenu du billet : </label>
-            <textarea id="editPostContent" name="editPostContent" class="form-control" required><?= $post['post_content'] ?></textarea>
+            <textarea id="editPostContent" name="editPostContent" class="form-control" required><?= $post->getPostContent() ?></textarea>
         </div>
         <input type="submit" value="Modifier"/>
         <button id="previousButton">Précédent</button>

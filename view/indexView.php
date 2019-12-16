@@ -110,9 +110,6 @@ $myAdmin = new AdminUserController();
         $manage->displayLastPost();
     ?>
 
-    <footer class="container-fluid pl-0 pr-0">
-        <div class="col text-center">FOOTER DU SITE</div>
-    </footer>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

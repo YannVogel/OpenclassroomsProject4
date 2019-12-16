@@ -1,5 +1,4 @@
 <!-- Ici se trouve le code pour ajouter un nouveau billet -->
-
 <form action="index.php" class="container" method="post">
     <div class="form-group">
         <label for="newPostTitle">Titre du billet : </label>
