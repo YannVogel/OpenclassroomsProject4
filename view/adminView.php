@@ -8,14 +8,10 @@ $myAdmin = new AdminUserController();
 <?php
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname']))
 {
+
+    include('adminHeader.php');
 ?>
-    <header class="container">
-        <div class="col text-center">HEADER DU SITE
-            <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div>
-            <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span class="fa faButtonRight fa-toggle-off"></span></button>
-            <button id="adminPanelQuitButton" class="btn btn-success">Page d'accueil<span class="fa faButtonRight fa-home"></span></button>
-        </div>
-    </header>
+
 
     <nav class="nav nav-tabs">
         <a id='tab1' class="nav-item nav-link" href="#p1">Nouveau billet</a>
