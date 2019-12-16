@@ -22,7 +22,7 @@ use Project\Controller\AdminUserController;
     <link rel="stylesheet" href="public/css/style.css" />
     <script src="https://cdn.tiny.cloud/1/eao0m8gx6g8dp0oieeo8wvkd3ut5slygyly5rgcyizps38du/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-    <title>Page d'administration</title>
+    <title>Le blog de Jean Forteroche</title>
 </head>
 <body>
 <?php
@@ -91,6 +91,67 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
 }
 ?>
 
+
+<div class="container">
+    <div class="modal fade" id="connectionForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Vos infos :</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body row">
+                    <form class="col" method="post" action=".">
+                        <div class="form-group">
+                            <label for="nicknameInput" class="form-control-label">Pseudo</label>
+                            <input type="text" class="form-control" name ="nicknameInput" id="nicknameInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput" class="form-control-label">Mot de passe</label>
+                            <input type="password" class="form-control" name="passwordInput" id="passwordInput" required>
+                        </div>
+                        <button id="connectionButton" type="submit" class="btn btn-primary pull-right">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="modal fade" id="inscriptionForm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Vos infos :</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body row">
+                    <form class="col" method="post" action="inscription.php">
+                        <div class="form-group">
+                            <label for="nicknameInscriptionInput" class="form-control-label">Pseudo désiré</label>
+                            <input type="text" class="form-control" name ="nicknameInscriptionInput" id="nicknameInscriptionInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInscriptionInput" class="form-control-label">Mot de passe</label>
+                            <input type="password" class="form-control" name="passwordInscriptionInput" id="passwordInscriptionInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInscriptionConfirmationInput" class="form-control-label">Confirmez votre mot de passe</label>
+                            <input type="password" class="form-control" name="passwordInscriptionConfirmationInput" id="passwordInscriptionConfirmationInput" required>
+                        </div>
+                        <button id="inscriptionButton" type="submit" class="btn btn-info pull-right">Inscription</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
