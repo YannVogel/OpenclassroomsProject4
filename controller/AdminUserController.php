@@ -1,6 +1,6 @@
 <?php
 namespace Project\Controller;
-session_start();
+
 use Project\Model\Entity\UserEntity;
 use Project\Model\Manager\UserManager;
 
@@ -14,9 +14,6 @@ class AdminUserController
 
         $myAdmin = new UserManager();
         $myAdmin->addUser($user);
-
-        $_SESSION['nickname'] = htmlspecialchars($_POST['nicknameInscriptionInput']);
-        $_SESSION['password'] = $_POST['passwordInscriptionInput'];
 
         header('Location: index.php?newUserSuccessMessage=1');
     }
@@ -52,10 +49,17 @@ class AdminUserController
 
         /** @var UserEntity  $user */
         foreach ($data as $user){
-            if(strtolower($nickname) === strtolower($user->getUserNickname()) AND $password === $user->getUserPassword()) {
+            if(strtolower($nickname) === strtolower($user->getUserNickname()) AND password_verify($password, $user->getUserPassword())) {
                 return 1;
             }
         }
         return 0;
+    }
+
+    public function isUserAnAdmin(string $nickname) {
+        $userManager = new UserManager();
+        $user = $userManager->getUser($nickname);
+
+        return $user['user_admin_rights'];
     }
 }

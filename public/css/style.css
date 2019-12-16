@@ -2,21 +2,25 @@ body {
     position: relative;
     height: 100vh;
 }
+
 .col {
     border: 2px black solid;
 }
 
 footer {
     background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
+
 }
 
 #newPostSuccessMessage, #newPostFailureMessage,
 #editPostSuccessMessage, #editPostFailureMessage,
 #deletePostSuccessMessage, #deletePostFailureMessage,
-#newUserSuccessMessage,  #newUserFailureMessage  {
+#newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage  {
     position: fixed;
     width: 100%;
     z-index: 1000;
+}
+
+.faButtonRight {
+    margin-left: 5px;
 }

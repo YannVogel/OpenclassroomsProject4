@@ -15,12 +15,12 @@ class AdminPostController
         $myAdmin = new PostManager();
         $myAdmin->addPost($myPost);
 
-        header('Location: index.php?newPostSuccessMessage=1');
+        header('Location: index.php?adminPage=1&newPostSuccessMessage=1');
     }
 
     public function failureAddPost() {
 
-        header('Location: index.php?newPostFailureMessage=1');
+        header('Location: index.php?adminPage=1&newPostFailureMessage=1');
     }
 
     public function valideEditPost() {
@@ -28,12 +28,12 @@ class AdminPostController
         $myAdmin = new PostManager();
         $myAdmin->editPost($_GET['editPostId'], htmlspecialchars($_POST['editPostTitle']), $_POST['editPostContent']);
 
-        header('Location: index.php?editPostSuccessMessage=1');
+        header('Location: index.php?adminPage=1&editPostSuccessMessage=1');
     }
 
     public function failureEditPost() {
 
-        header('Location: index.php?editPostFailureMessage=1');
+        header('Location: index.php?adminPage=1&editPostFailureMessage=1');
     }
 
     public function valideDeletePost() {
@@ -41,12 +41,12 @@ class AdminPostController
         $myAdmin = new PostManager();
         $myAdmin->deletePost($_GET['deletePostId']);
 
-        header('Location: index.php?deletePostSuccessMessage=1');
+        header('Location: index.php?adminPage=1&deletePostSuccessMessage=1');
     }
 
     public function failureDeletePost() {
 
-        header('Location: index.php?deletePostFailureMessage=1');
+        header('Location: index.php?adminPage=1&deletePostFailureMessage=1');
     }
 }
 

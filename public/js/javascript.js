@@ -12,9 +12,20 @@ $('#passwordInput').attr("value", store.getLocal("password"));
 
 
 
+$('#endConnectionButton').on('click', function(e) {
+    e.preventDefault();
+    window.location.href='logout.php';
+});
 
+$('#adminPanelEnterButton').on('click', function(e) {
+    e.preventDefault();
+    window.location.href='index.php?adminPage=1';
+});
 
-
+$('#adminPanelQuitButton').on('click', function(e) {
+    e.preventDefault();
+    window.location.href='index.php';
+});
 
 
 
@@ -42,11 +53,13 @@ $(window).on('load',function() {
 
     $('#newUserSuccessMessage').fadeOut(5000);
     $('#newUserFailureMessage').fadeOut(5000);
+
+    $('#connectionUserFailureMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {
     e.preventDefault();
-    window.location.href='.';
+    window.location.href='index.php?adminPage=1';
 });
 
 $('nav.nav-tabs a').on('click', function(e) {

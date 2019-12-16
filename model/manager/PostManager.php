@@ -11,7 +11,7 @@ class PostManager extends Manager
     {
         $db = $this->databaseConnect();
 
-        $posts = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table ORDER BY post_id DESC');
+        $posts = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS post_date_fr FROM posts_table ORDER BY post_id DESC');
         $posts->execute();
 
         return $posts->fetchAll(\PDO::FETCH_CLASS, PostEntity::class);
@@ -20,8 +20,10 @@ class PostManager extends Manager
     public function getPost(int $postId)
     {
         $db = $this->databaseConnect();
-        $post = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS posts_dates_fr FROM posts_table WHERE post_id = ?');
+        $post = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS post_date_fr FROM posts_table WHERE post_id = ?');
         $post->execute(array($postId));
+
+        $post->setFetchMode(\PDO::FETCH_CLASS, PostEntity::class);
 
         return $post->fetch();
     }
@@ -31,6 +33,8 @@ class PostManager extends Manager
         $db = $this->databaseConnect();
         $lastPost = $db->prepare('SELECT post_id, post_title, post_content, DATE_FORMAT(post_date, \'%d/%m/%y - %Hh%imin%ss\') AS post_date_fr FROM posts_table ORDER BY post_id DESC LIMIT 0,1');
         $lastPost->execute();
+
+        $lastPost->setFetchMode(\PDO::FETCH_CLASS, PostEntity::class);
 
         return $lastPost->fetch();
     }
