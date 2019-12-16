@@ -62,7 +62,7 @@ class PostEntity
 
     public function getPostIntro() : string
     {
-        return substr(strip_tags($this->post_content), 0, 500) . '<a href="index.php?displayPost=' . $this->getPostId() . '">...lire la suite</a>';
+        return substr(strip_tags($this->post_content), 0, 1000) . '<a href="index.php?displayPost=' . $this->getPostId() . '">...lire la suite</a>';
     }
 
     /**

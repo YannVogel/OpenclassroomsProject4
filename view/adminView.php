@@ -9,7 +9,7 @@ $myAdmin = new AdminUserController();
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname']))
 {
 ?>
-    <header class="container-fluid pl-0 pr-0">
+    <header class="container">
         <div class="col text-center">HEADER DU SITE
             <div>Vous êtes connecté·e en tant que <?= $_SESSION['nickname'] ?></div>
             <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span class="fa faButtonRight fa-toggle-off"></span></button>
