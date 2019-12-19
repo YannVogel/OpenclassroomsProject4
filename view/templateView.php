@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="public/css/style.css" />
     <script src="https://cdn.tiny.cloud/1/eao0m8gx6g8dp0oieeo8wvkd3ut5slygyly5rgcyizps38du/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+    <script>tinymce.init({selector:'#newPostContent'});</script>
     <title>
         <?php
         if(isset($pageTitle))
@@ -25,6 +25,8 @@
 <?php
     echo $pageHeader;
     echo $pageContent;
+
+    if(isset($commentsContent)){echo $commentsContent;}
 ?>
 
 

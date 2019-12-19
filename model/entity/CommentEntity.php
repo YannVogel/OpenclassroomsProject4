@@ -3,7 +3,7 @@ namespace Project\Model\Entity;
 
 class CommentEntity
 {
-    private $comment_id, $related_post_id, $comment_author, $commment_content, $comment_date, $comment_moderation;
+    private $comment_id, $related_post_id, $comment_author, $comment_content, $comment_date_fr, $comment_moderation;
 
     /**
      * @return mixed
@@ -62,18 +62,18 @@ class CommentEntity
     /**
      * @return mixed
      */
-    public function getCommmentContent() : string
+    public function getCommentContent() : string
     {
-        return $this->commment_content;
+        return $this->comment_content;
     }
 
     /**
-     * @param mixed $commment_content
+     * @param mixed $comment_content
      * @return CommentEntity
      */
-    public function setCommmentContent(string $commment_content)
+    public function setCommentContent(string $comment_content)
     {
-        $this->commment_content = $commment_content;
+        $this->comment_content = $comment_content;
         return $this;
     }
 
@@ -82,7 +82,7 @@ class CommentEntity
      */
     public function getCommentDate()
     {
-        return $this->comment_date;
+        return $this->comment_date_fr;
     }
 
     /**

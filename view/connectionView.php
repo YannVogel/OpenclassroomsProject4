@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div class="modal-body row">
-                    <form class="col" method="post" action="index.php">
+                    <form class="col" method="post" action="#">
                         <div class="form-group">
                             <label for="nicknameInput" class="form-control-label">Pseudo</label>
                             <input type="text" class="form-control" name ="nicknameInput" id="nicknameInput" required>

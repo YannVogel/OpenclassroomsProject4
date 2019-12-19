@@ -55,6 +55,11 @@ $(window).on('load',function() {
     $('#newUserFailureMessage').fadeOut(5000);
 
     $('#connectionUserFailureMessage').fadeOut(5000);
+
+    $('#newCommentSuccessMessage').fadeOut(5000);
+    $('#newCommentFailureMessage').fadeOut(5000);
+
+    $('#signalCommentSuccessMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {
