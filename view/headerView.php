@@ -1,3 +1,11 @@
+<?php
+use Project\Controller\AdminUserController;
+
+$myAdmin = new AdminUserController();
+
+?>
+
+
 <header class="container">
     <div class="row">
         <div class="col col-md-12 text-center">HEADER DU SITE
