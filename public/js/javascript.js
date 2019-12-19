@@ -62,6 +62,8 @@ $(window).on('load',function() {
     $('#signalCommentSuccessMessage').fadeOut(5000);
 
     $('#deleteCommentSuccessMessage').fadeOut(5000);
+
+    $('#welcomeMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {
