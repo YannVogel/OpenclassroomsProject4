@@ -15,7 +15,9 @@ footer {
 #newPostSuccessMessage, #newPostFailureMessage,
 #editPostSuccessMessage, #editPostFailureMessage,
 #deletePostSuccessMessage, #deletePostFailureMessage,
-#newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage  {
+#newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage,
+#newCommentSuccessMessage, #newCommentFailureMessage,
+#signalCommentSuccessMessage{
     position: fixed;
     width: 100%;
     z-index: 1000;

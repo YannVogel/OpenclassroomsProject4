@@ -7,5 +7,6 @@ if($lastPost)
     <div class="col"><?= $lastPost->getPostIntro(); ?></div>
 </section>
 <?php
-    }
-
+    }else{
+    echo '<div>Aucun billet à afficher</div>';
+}

@@ -12,13 +12,13 @@ use Project\Controller\AdminUserController;
 
 
 
-if(isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset($_POST['newPostContent']) && trim($_POST['newPostContent']) !== "") {
-
+if(isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset($_POST['newPostContent']) && trim($_POST['newPostContent']) !== "")
+{
     $adminController = new AdminPostController();
     $adminController->valideAddPost();
 
-} elseif(isset($_POST['newPostTitle']) OR isset($_POST['newPostContent'])) {
-
+} elseif(isset($_POST['newPostTitle']) OR isset($_POST['newPostContent']))
+{
     $adminController = new AdminPostController();
     $adminController->failureAddPost();
 }
@@ -45,6 +45,22 @@ if(isset($_GET['deletePostId']) AND trim($_GET['deletePostId']) !== "")
     $adminController->failureDeletePost();
 }
 
+if(isset($_POST['newComment']) && trim($_POST['newComment']) !== "")
+{
+    $adminController = new AdminCommentController();
+    $adminController->valideAddComment($_GET['displayPost'], $_SESSION['nickname'], $_POST['newComment']);
+
+}elseif(isset($_POST['newComment']))
+{
+    $adminController = new AdminCommentController();
+    $adminController->failureAddComment($_GET['displayPost']);
+}
+
+if(isset($_GET['displayPost']) AND isset($_GET['signalComment']))
+{
+    $adminController = new AdminCommentController();
+    $adminController->valideSignalComment($_GET['displayPost'], $_GET['signalComment']);
+}
 
 
 
@@ -54,6 +70,9 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
     $pageTitle = $controller->getPageTitle($_GET['displayPost']);
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getPostPage($_GET['displayPost']);
+
+    $commentsController = new CommentController();
+    $commentsContent = $commentsController->getCommentsSection($_GET['displayPost']);
 
 }elseif(isset($_GET['adminPage']) AND $_GET['adminPage'] === '1') {
 
