@@ -3,13 +3,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Vos infos :</h4>
+                    <h4 class="modal-title">Vos identifiants :</h4>
                     <button type="button" class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body row">
-                    <form class="col" method="post" action=".">
+                    <form class="col" method="post" action="index.php">
                         <div class="form-group">
                             <label for="nicknameInput" class="form-control-label">Pseudo</label>
                             <input type="text" class="form-control" name ="nicknameInput" id="nicknameInput" required>

@@ -12,17 +12,19 @@
     <link rel="stylesheet" href="public/css/style.css" />
     <script src="https://cdn.tiny.cloud/1/eao0m8gx6g8dp0oieeo8wvkd3ut5slygyly5rgcyizps38du/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-    <title>Le blog de Jean Forteroche</title>
+    <title>
+        <?php
+        if(isset($pageTitle))
+        {
+            echo $pageTitle;
+        }?>
+        Le blog de Jean Forteroche</title>
 </head>
 <body>
 
 <?php
-include('view/alertsView.php');
-include('view/connectionView.php');
-include('view/inscriptionView.php');
-
-
-echo $pageContent;
+    echo $pageHeader;
+    echo $pageContent;
 ?>
 
 

@@ -6,6 +6,25 @@ use Project\Model\Manager\PostManager;
 
 class AdminPostController
 {
+
+    public function getAdminPageHeader()
+    {
+        ob_start();
+
+        include('view/adminHeaderView.php');
+
+        return ob_get_clean();
+    }
+
+
+    public function getAdminPage() {
+        ob_start();
+
+        include('view/adminView.php');
+
+        return ob_get_clean();
+    }
+
     public function valideAddPost() {
 
         $myPost = new PostEntity();
