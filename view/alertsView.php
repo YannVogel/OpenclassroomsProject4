@@ -161,3 +161,16 @@ if(isset($_GET['deleteCommentSuccessMessage']) AND $_GET['deleteCommentSuccessMe
     </div>
     <?php
 }
+
+if(isset($_GET['welcomeMessage']) AND $_GET['welcomeMessage'] === '1')
+{
+    ?>
+    <div id="welcomeMessage" class="alert alert-primary alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Fermer</span>
+        </button>
+        Bon retour sur mon site <strong><?= $_SESSION['nickname'] ?></strong> !
+    </div>
+    <?php
+}

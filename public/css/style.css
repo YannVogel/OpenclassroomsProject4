@@ -17,7 +17,8 @@ footer {
 #deletePostSuccessMessage, #deletePostFailureMessage,
 #newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage,
 #newCommentSuccessMessage, #newCommentFailureMessage,
-#signalCommentSuccessMessage, #deleteCommentSuccessMessage{
+#signalCommentSuccessMessage, #deleteCommentSuccessMessage,
+#welcomeMessage {
     position: fixed;
     width: 100%;
     z-index: 1000;
