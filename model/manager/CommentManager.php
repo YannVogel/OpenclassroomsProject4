@@ -63,4 +63,13 @@ class CommentManager extends Manager
         $req->execute(array($moderation, $commentId));
 
     }
+
+    public function manageComments()
+    {
+        $db = $this->databaseConnect();
+        $comments = $db->prepare('SELECT comment_id, related_post_id, comment_author, comment_content, DATE_FORMAT(comment_date, \'%d/%m/%y - %Hh%imin%ss\') AS comment_date_fr, comment_moderation FROM comments_table ORDER BY comment_moderation DESC');
+        $comments->execute();
+
+        return $comments->fetchAll(\PDO::FETCH_CLASS, CommentEntity::class);
+    }
 }

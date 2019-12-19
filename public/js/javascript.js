@@ -60,6 +60,8 @@ $(window).on('load',function() {
     $('#newCommentFailureMessage').fadeOut(5000);
 
     $('#signalCommentSuccessMessage').fadeOut(5000);
+
+    $('#deleteCommentSuccessMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {

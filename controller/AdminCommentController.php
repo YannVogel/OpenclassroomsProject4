@@ -38,4 +38,13 @@ class AdminCommentController
 
 
     }
+
+    public function valideDeleteComment($commentId)
+    {
+        $manager = new CommentManager();
+        $manager->deleteComment($commentId);
+
+        header('Location: index.php?adminPage=1&deleteCommentSuccessMessage=1');
+
+    }
 }
