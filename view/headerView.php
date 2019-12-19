@@ -3,8 +3,26 @@ use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
 
+if(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND $myAdmin->isConnectionValid($_POST['nicknameInput'], $_POST['passwordInput']))
+{
+    $nickname = htmlspecialchars($_POST['nicknameInput']);
+    $password = $_POST['passwordInput'];
+    $_SESSION['nickname'] = $nickname;
+    $_SESSION['password'] = $password;
+} elseif(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND trim($_POST['nicknameInput']) !== "" AND  trim($_POST['passwordInput']) !== "") { ?>
+    <div id="connectionUserFailureMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Fermer</span>
+        </button>
+        <strong>Erreur !</strong> Identifiants incorrects...
+    </div>
+    <?php
+}
+include('view/alertsView.php');
+include('view/connectionView.php');
+include('view/inscriptionView.php');
 ?>
-
 
 <header class="container">
     <div class="row">
@@ -35,5 +53,6 @@ $myAdmin = new AdminUserController();
         }
         ?>
     </div>
-    </div>
 </header>
+
+

@@ -1,18 +1,13 @@
 <?php
 use Project\Controller\AdminUserController;
+use Project\Controller\AdminPostController;
 
 $myAdmin = new AdminUserController();
 
-?>
 
-<?php
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname']))
 {
-
-    include('adminHeaderView.php');
 ?>
-
-
     <nav class="nav nav-tabs">
         <a id='tab1' class="nav-item nav-link" href="#p1">Nouveau billet</a>
         <a id='tab2' class="nav-item nav-link" href="#p2">Modifier billet</a>

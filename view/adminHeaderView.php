@@ -1,3 +1,11 @@
+<?php
+
+include('view/alertsView.php');
+include('view/connectionView.php');
+include('view/inscriptionView.php');
+
+?>
+
 <header class="container">
     <div class="col text-center">HEADER DU SITE
         <div>Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></div>
