@@ -31,7 +31,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
     </div>
     <div class="tab-pane" id="p4">
         <!-- Ici se trouve le code pour supprimer un commentaire -->
-        Ici se trouve le code pour supprimer un commentaire
+        <?php require('./view/deleteCommentView.php') ?>
     </div>
     </div>
 <?php

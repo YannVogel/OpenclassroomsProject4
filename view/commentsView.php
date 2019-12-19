@@ -33,9 +33,23 @@ if($comments) {
             le <?= $comment->getCommentDate() ?>
             <?php
             if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
+                if($comment->getCommentAuthor() !== $_SESSION['nickname']) {
+                    ?>
+                    <a href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalCommentId=<?= $comment->getCommentId() ?>"><span
+                            title="Signaler ce commentaire" class="fa fa-exclamation-triangle" style="color:red"></span></a>
+                    <?php
+                }else
+                {
                 ?>
-                <a href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalComment=<?= $comment->getCommentId() ?>"><span title="Signaler ce commentaire" class="fa fa-exclamation-triangle float-right" style="color:red"></span></a>
+                    <span class="text-info">(C'est vous qui avez posté ce commentaire !)</span>
+                <?php
+                }
+                if($myAdmin->isUserAnAdmin($_SESSION['nickname']))
+                {
+                ?>
+                    <a href="index.php?adminPage=1"><span title="Accéder au panneau d'administration" class="fa fa-lock" style="color:blue"></span></a>
             <?php
+                }
             }
             ?>
             </div>
