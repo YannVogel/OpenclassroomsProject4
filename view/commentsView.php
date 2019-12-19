@@ -30,7 +30,15 @@ if($comments) {
     foreach ($comments as $comment) { ?>
 
         <div class="col col-12 text-center"><strong><?= $comment->getCommentAuthor() ?></strong> a posté un commentaire
-            le <?= $comment->getCommentDate() ?> <a href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalComment=<?= $comment->getCommentId() ?>"><span title="Signaler ce commentaire" class="fa fa-exclamation-triangle float-right" style="color:red"></span></a></div>
+            le <?= $comment->getCommentDate() ?>
+            <?php
+            if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
+                ?>
+                <a href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalComment=<?= $comment->getCommentId() ?>"><span title="Signaler ce commentaire" class="fa fa-exclamation-triangle float-right" style="color:red"></span></a>
+            <?php
+            }
+            ?>
+            </div>
         <div class="col col-12"><?= $comment->getCommentContent() ?></div>
 
         <?php
