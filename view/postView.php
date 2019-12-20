@@ -4,18 +4,18 @@ $controller = new PostController();
 ?>
 
 <section class="container">
-    <div class="row">
+    <div class="row mt-4 mb-2">
         <div class="col col-12 text-center">
-            <h2 class="h2"><?= $post->getPostTitle(); ?></h2>
+            <h3 class="h3"><?= $post->getPostTitle(); ?></h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row font-weight-bold bgColor-azureishWhite">
         <span class="col col-8">publié le <?= $post->getPostDate(); ?></span>
-        <span class="col col-4 text-center">Nombre de commentaire : <?= $controller->getNumberOfComments($post->getPostId()) ?></span>
+        <span class="col col-4 text-right">Nombre de commentaire : <?= $controller->getNumberOfComments($post->getPostId()) ?></span>
     </div>
-    <div class="row">
+    <div class="row border bgColor-floralWhite">
         <div class="col col-12"><?= $post->getPostContent(); ?></div>
-        <a class="col col-12 text-center" href="index.php">Retour à l'accueil.</a>
+        <div class="col col-12 text-center"><span class="font-weight-bold">FIN DU CHAPITRE</span><br/><a href="index.php">Retour à l'accueil</a></div>
 
     </div>
 </section>

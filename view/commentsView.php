@@ -5,8 +5,10 @@ use Project\Controller\AdminUserController;
 $myAdmin = new AdminUserController();
 ?>
 
-<section class="container">
-
+<section class="container mt-4 border">
+    <div class="row">
+        <div class="col col-12 text-center font-weight-bold bg-color2 mb-2">Espace commentaires :</div>
+    </div>
 <?php
 
 if($comments) {
@@ -14,7 +16,7 @@ if($comments) {
 //Afficher commentaires
     /** @var CommentEntity $comment */
     foreach ($comments as $comment) { ?>
-
+<div class="col col-12">
         <div class="col col-12 text-center"><strong><?= $comment->getCommentAuthor() ?></strong> a posté un commentaire
             le <?= $comment->getCommentDate() ?>
             <?php
@@ -40,7 +42,8 @@ if($comments) {
             ?>
             </div>
         <div class="col col-12"><?= $comment->getCommentContent() ?></div>
-
+</div>
+        <div class="myCommentLine"></div>
         <?php
     }
 }else

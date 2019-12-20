@@ -24,10 +24,13 @@ include('view/connectionView.php');
 include('view/inscriptionView.php');
 ?>
 
-<header class="container">
+<header class="container bgColor-azureishWhite">
     <div class="row">
-        <div class="col col-md-12 text-center">
-            <ul class="nav">
+        <div class="col text-center">
+            <h1 class="h1">Billet simple pour l'Alaska</h1>
+            <br/>
+            <h2 class="navbar-brand">Le site officiel de Jean Forteroche</h2>
+            <ul class="nav flex-row justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Accueil</a>
                 </li>
