@@ -6,20 +6,6 @@ $myAdmin = new AdminUserController();
 ?>
 
 <section class="container">
-<?php
-//Si l'utilisateur est connecté, afficher module de post de commentaires
-if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
-
-        include('addCommentView.php');
-
-    } else   //Sinon, afficher proposition de se connecter
-    {
-    ?>
-        <div class="col col-12 text-center">Vous devez vous <a data-toggle="modal" href="#connectionForm">connecter</a> pour publier un commentaire.</div>
-<?php
-    }
-
-?>
 
 <?php
 
@@ -59,7 +45,22 @@ if($comments) {
     }
 }else
 {
-    echo '<div>Il n\'y pas encore de commentaire posté ici...</div>';
+    ?>
+    <div class="col col-12 text-center">Soyez le premier à poster un commentaire !</div>';
+    <?php
 }
+
+//Si l'utilisateur est connecté, afficher module de post de commentaires
+if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
+
+    include('addCommentView.php');
+
+} else   //Sinon, afficher proposition de se connecter
+{
+    ?>
+    <div class="col col-12 text-center">Vous devez vous <a data-toggle="modal" href="#connectionForm">connecter</a> pour publier un commentaire.</div>
+    <?php
+}
+
 ?>
         </section>

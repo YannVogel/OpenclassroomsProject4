@@ -95,9 +95,18 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
     $pageContent = $adminController->getAdminPage();
 
 }elseif(isset($_GET['postsPage']) AND $_GET['postsPage'] === '1') {
+
     $controller = new PostController();
+    $pageTitle = 'Tous les chapitres publiés | ';
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getPostsPage();
+
+}elseif(isset($_GET['faqPage']) AND $_GET['faqPage'] === '1'){
+
+    $controller = new PostController();
+    $pageTitle = 'Le concept de ce site | ';
+    $pageHeader = $controller->getRegularHeader();
+    $pageContent = $controller->getFaqPage();
 
 }else {
 

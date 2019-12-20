@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
         <label for="newPostContent">Contenu du billet : </label>
-        <textarea id="newPostContent" name="newPostContent" class="form-control" required>Votre texte</textarea>
+        <textarea id="newPostContent" name="newPostContent" class="form-control" placeholder="Un nouveau chapitre de Jean Rochefort va naître ici !" required></textarea>
     </div>
     <input type="submit" value="Valider" />
 </form>
