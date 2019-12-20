@@ -1,15 +1,40 @@
 body {
     position: relative;
-    height: 100vh;
 }
 
-.col {
-    border: 2px black solid;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    display: inline;
 }
 
-footer {
-    background-color: rgba(0, 0, 0, 0.5);
+/* -------------------- COLORS PALETTE -------------------- */
+.color-floralWhite {
+    color: #fffaf0;
+}
 
+.bgColor-floralWhite {
+    background-color: #fffaf0;
+}
+
+.color-azureishWhite {
+    color: #dbe9f4;
+}
+
+.bgColor-azureishWhite {
+    background-color: #dbe9f4;
+}
+
+
+
+
+
+img#jeanForteroche {
+    width: 512px;
+    height: 342px;
 }
 
 #newPostSuccessMessage, #newPostFailureMessage,
@@ -26,4 +51,22 @@ footer {
 
 .faButtonRight {
     margin-left: 5px;
+}
+
+header {
+    border: 1px black solid;
+    position: relative;
+}
+
+.myLine {
+    border: 1px black solid;
+    opacity: 0.2;
+    margin: 10px 0;
+}
+
+.myCommentLine {
+    border: 1px black solid;
+    opacity: 0.2;
+    margin: 10px 0;
+    width: 30%;
 }
