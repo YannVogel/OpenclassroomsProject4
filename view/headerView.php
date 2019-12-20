@@ -26,12 +26,23 @@ include('view/inscriptionView.php');
 
 <header class="container">
     <div class="row">
-        <div class="col col-md-12 text-center">HEADER DU SITE
+        <div class="col col-md-12 text-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?faqPage=1">Concept du site</a>
+                </li>
+            </ul>
             <?php
             if(!isset($_SESSION['nickname']) OR !isset($_SESSION['password']) OR trim($_SESSION['nickname']) === '' OR trim($_SESSION['password']) === '')
             {
             ?>
-            <div></div><button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
+            <button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
             <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa faButtonRight fa-edit"></span></button></div>
         <?php
         }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
@@ -52,6 +63,7 @@ include('view/inscriptionView.php');
             }
         }
         ?>
+        </div>
     </div>
 </header>
 

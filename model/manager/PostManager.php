@@ -64,4 +64,15 @@ class PostManager extends Manager
         $req = $db->prepare('DELETE FROM posts_table WHERE post_id= ?');
         $req->execute(array($postId));
     }
+
+    public function numberOfComments($postId)
+    {
+        $db = $this->databaseConnect();
+        $comments = $db->prepare('SELECT COUNT(*) AS numberOfComments FROM comments_table WHERE related_post_id = ?');
+        $comments->execute(array($postId));
+
+        $nbr = $comments->fetch();
+
+        return $nbr['numberOfComments'];
+    }
 }
