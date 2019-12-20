@@ -94,6 +94,11 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
     $pageHeader = $adminController->getAdminPageHeader();
     $pageContent = $adminController->getAdminPage();
 
+}elseif(isset($_GET['postsPage']) AND $_GET['postsPage'] === '1') {
+    $controller = new PostController();
+    $pageHeader = $controller->getRegularHeader();
+    $pageContent = $controller->getPostsPage();
+
 }else {
 
     $controller = new PostController();
