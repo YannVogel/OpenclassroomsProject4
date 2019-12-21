@@ -30,6 +30,10 @@ include('view/inscriptionView.php');
             <h1 class="h1">Billet simple pour l'Alaska</h1>
             <br/>
             <h2 class="navbar-brand">Le site officiel de Jean Forteroche</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
             <ul class="nav flex-row justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Accueil</a>
@@ -37,25 +41,20 @@ include('view/inscriptionView.php');
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres</a>
                 </li>
-            </ul>
+                <li class="nav-item">
             <?php
             if(!isset($_SESSION['nickname']) OR !isset($_SESSION['password']) OR trim($_SESSION['nickname']) === '' OR trim($_SESSION['password']) === '')
             {
             ?>
             <button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
-            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa faButtonRight fa-edit"></span></button></div>
-        <?php
+            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa faButtonRight fa-edit"></span></button>
+          <?php
         }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
             if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
-                ?>
-                <div>Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></div>
-                <button id="endConnectionButton" class="btn btn-primary">Se déconnecter<span
-                        class="fa faButtonRight fa-toggle-off"></span></button>
-                <?php if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
+                if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
                     ?>
 
-                    <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span
-                            class="fa faButtonRight fa-lock"></span></button>
+                    <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
                     <?php
                 }
             }else {
@@ -63,8 +62,19 @@ include('view/inscriptionView.php');
             }
         }
         ?>
+                </li>
+            </ul>
         </div>
     </div>
+    <?php
+    if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
+        ?>
+        <div class="row">
+            <div class="col text-center">
+                Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong> (<a id="endConnectionButton" href="#">Se déconnecter</a>)
+            </div>
+        </div>
+        <?php
+    }
+    ?>
 </header>
-
-
