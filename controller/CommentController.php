@@ -5,8 +5,18 @@ namespace Project\Controller;
 use Project\Model\Entity\CommentEntity;
 use Project\Model\Manager\CommentManager;
 
+/**
+ * Class CommentController
+ * @package Project\Controller
+ * Control the operations affecting the comments.
+ */
 class CommentController
 {
+    /**
+     * @param $postId
+     * @return false|string
+     * Display the comments section of the post matching $postId.
+     */
     public function getCommentsSection($postId)
     {
         ob_start();

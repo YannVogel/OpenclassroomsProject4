@@ -5,45 +5,46 @@ namespace Project\Model\Manager;
 /**
  * Class Manager
  * @package Project\Model\Manager
+ * Manage the database connection.
  */
 abstract class Manager
 {
     /**
-     * @var null Contains the database connexion informations once connected
+     * @var null Contains the database connexion informations once connected.
      */
     private static $database = null;
 
     /**
-     * @var string Contains the relational database management system (RDBMS)
+     * @var string Contains the relational database management system (RDBMS).
      */
     private const DRIVER = 'mysql';
 
     /**
-     * @var string Contains the server address
+     * @var string Contains the server address.
      */
     private const SERVER = 'localhost';
 
     /**
-     * @var string Contains the database name
+     * @var string Contains the database name.
      */
     private const DBNAME = 'jean_forteroche_blog';
 
     /**
-     * @var string Contains the database username
+     * @var string Contains the database username.
      */
     private const USERNAME = 'root';
 
     /**
-     * @var string Contains the database password
+     * @var string Contains the database password.
      */
     private const PASSWORD = '';
 
     /**
-     * @return \PDO|null
+     * @return \PDO
      * Connect to the database.
      * If already connected, return the database informations.
      */
-    protected function databaseConnect()
+    protected function databaseConnect() : \PDO
     {
         if(self::$database === null) {
 

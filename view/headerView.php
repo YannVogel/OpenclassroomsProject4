@@ -54,7 +54,7 @@ include('view/inscriptionView.php');
                 if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
                     ?>
 
-                    <button id="adminPanelEnterButton" class="btn btn-danger btn-sm">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
+                    <button id="adminPanelEnterButton" class="btn btn-danger btn-sm">Administration<span class="fa faButtonRight fa-lock"></span></button>
                     <?php
                 }
             }else {
