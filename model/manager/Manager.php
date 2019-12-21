@@ -2,19 +2,49 @@
 
 namespace Project\Model\Manager;
 
+/**
+ * Class Manager
+ * @package Project\Model\Manager
+ */
 abstract class Manager
 {
+    /**
+     * @var null Contains the database connexion informations once connected
+     */
     private static $database = null;
 
+    /**
+     * @var string Contains the relational database management system (RDBMS)
+     */
     private const DRIVER = 'mysql';
+
+    /**
+     * @var string Contains the server address
+     */
     private const SERVER = 'localhost';
+
+    /**
+     * @var string Contains the database name
+     */
     private const DBNAME = 'jean_forteroche_blog';
+
+    /**
+     * @var string Contains the database username
+     */
     private const USERNAME = 'root';
+
+    /**
+     * @var string Contains the database password
+     */
     private const PASSWORD = '';
 
+    /**
+     * @return \PDO|null
+     * Connect to the database.
+     * If already connected, return the database informations.
+     */
     protected function databaseConnect()
     {
-        //Limite le nombre d'accès à la BDD
         if(self::$database === null) {
 
             try {
