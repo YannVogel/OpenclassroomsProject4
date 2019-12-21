@@ -5,8 +5,17 @@ namespace Project\Model\Manager;
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\Manager;
 
+/**
+ * Class PostManager
+ * @package Project\Model\Manager
+ * Manage posts in database.
+ */
 class PostManager extends Manager
 {
+    /**
+     * @return array
+     * Return all the posts in the database.
+     */
     public function getPosts()
     {
         $db = $this->databaseConnect();
@@ -17,6 +26,11 @@ class PostManager extends Manager
         return $posts->fetchAll(\PDO::FETCH_CLASS, PostEntity::class);
     }
 
+    /**
+     * @param int $postId
+     * @return mixed
+     * Return the post matching $postId.
+     */
     public function getPost(int $postId)
     {
         $db = $this->databaseConnect();
@@ -29,6 +43,10 @@ class PostManager extends Manager
         return $post->fetch();
     }
 
+    /**
+     * @return mixed
+     * Return the last post of the database (based on the post_id).
+     */
     public function getLastPost()
     {
         $db = $this->databaseConnect();
@@ -41,6 +59,10 @@ class PostManager extends Manager
         return $lastPost->fetch();
     }
 
+    /**
+     * @param PostEntity $post
+     * Add a post to the database.
+     */
     public function addPost(PostEntity $post)
     {
         $db = $this->databaseConnect();
@@ -49,6 +71,12 @@ class PostManager extends Manager
         $req->execute(array($post->getPostTitle(), $post->getPostContent()));
     }
 
+    /**
+     * @param int $postId
+     * @param string $postTitle
+     * @param string $postContent
+     * Edit the post matching $postId with a new title ($postTitle) and content ($postContent).
+     */
     public function editPost(int $postId, string $postTitle, string $postContent)
     {
         $db = $this->databaseConnect();
@@ -57,6 +85,10 @@ class PostManager extends Manager
         $req->execute(array($postTitle, $postContent, $postId));
     }
 
+    /**
+     * @param int $postId
+     * Delete the post matching $postId from the database.
+     */
     public function deletePost(int $postId)
     {
         $db = $this->databaseConnect();
@@ -65,6 +97,11 @@ class PostManager extends Manager
         $req->execute(array($postId));
     }
 
+    /**
+     * @param $postId
+     * @return mixed
+     * Return the number of comments of the post matching $postId.
+     */
     public function numberOfComments($postId)
     {
         $db = $this->databaseConnect();

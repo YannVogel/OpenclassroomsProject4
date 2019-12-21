@@ -1,21 +1,52 @@
 <?php
 namespace Project\Model\Entity;
 
+/**
+ * Class UserEntity
+ * @package Project\Model\Entity
+ * Manage users in database as PHP objects.
+ */
 class UserEntity
 {
-    private $user_id, $user_nickname, $user_password, $user_inscription_date, $user_admin_rights;
+    /**
+     * @var
+     * Contains the unique ID of an user.
+     */
+    private $user_id;
+    /**
+     * @var
+     * Contains the unique nickname of an user.
+     */
+    private $user_nickname;
+    /**
+     * @var
+     * Contains the hashed password of an user.
+     */
+    private $user_password;
+    /**
+     * @var
+     * Contains the user inscription date.
+     */
+    private $user_inscription_date;
+    /**
+     * @var
+     * Contains an integer showing if an user is an admin (1) or not (0).
+     */
+    private $user_admin_rights;
+
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getUserId() : int
     {
         return $this->user_id;
     }
 
+
     /**
-     * @param mixed $user_id
-     * @return UserEntity
+     * @param int $user_id
+     * @return $this
      */
     public function setUserId(int $user_id)
     {
@@ -23,17 +54,19 @@ class UserEntity
         return $this;
     }
 
+
     /**
-     * @return mixed
+     * @return string
      */
     public function getUserNickname() : string
     {
         return $this->user_nickname;
     }
 
+
     /**
-     * @param mixed $user_nickname
-     * @return UserEntity
+     * @param string $user_nickname
+     * @return $this
      */
     public function setUserNickname(string $user_nickname)
     {
@@ -41,23 +74,26 @@ class UserEntity
         return $this;
     }
 
+
     /**
-     * @return mixed
+     * @return string
      */
     public function getUserPassword() : string
     {
         return $this->user_password;
     }
 
+
     /**
-     * @param mixed $user_password
-     * @return UserEntity
+     * @param string $user_password
+     * @return $this
      */
     public function setUserPassword(string $user_password)
     {
         $this->user_password = $user_password;
         return $this;
     }
+
 
     /**
      * @return mixed
@@ -67,9 +103,10 @@ class UserEntity
         return $this->user_inscription_date;
     }
 
+
     /**
-     * @param mixed $user_inscription_date
-     * @return UserEntity
+     * @param $user_inscription_date
+     * @return $this
      */
     public function setUserInscriptionDate($user_inscription_date)
     {
@@ -77,17 +114,19 @@ class UserEntity
         return $this;
     }
 
+
     /**
-     * @return mixed
+     * @return bool
      */
     public function getUserAdminRights() : bool
     {
         return $this->user_admin_rights;
     }
 
+
     /**
-     * @param mixed $user_admin_rights
-     * @return UserEntity
+     * @param bool $user_admin_rights
+     * @return $this
      */
     public function setUserAdminRights(bool $user_admin_rights)
     {

@@ -8,18 +8,19 @@ use Project\Model\Manager\Manager;
 /**
  * Class CommentManager
  * @package Project\Model\Manager
- * Manage comments in database
+ * Manage comments in database.
  */
 class CommentManager extends Manager
 {
     /**
      * @param int $commentId
      * @return CommentEntity
+     * Return the comment matching $commentId.
      */
     public function getComment(int $commentId) : CommentEntity
     {
         $db = $this->databaseConnect();
-        $comment = $db->prepare('SELECT comment_id, comment_author, comment_content, DATE_FORMAT(comment_date, \'%d/%m/%y - %Hh%imin%ss\') AS comment_date_fr, comment_moderation FROM comments_table WHERE comment_id = ?');
+        $comment = $db->prepare('SELECT comment_id, related_post_id, comment_author, comment_content, DATE_FORMAT(comment_date, \'%d/%m/%y - %Hh%imin%ss\') AS comment_date_fr, comment_moderation FROM comments_table WHERE comment_id = ?');
         $comment->execute(array($commentId));
 
         $comment->setFetchMode(\PDO::FETCH_CLASS, CommentEntity::class);
@@ -30,6 +31,7 @@ class CommentManager extends Manager
     /**
      * @param int $postId
      * @return array
+     * Return the comments of the post matching $postId.
      */
     public function getComments(int $postId)
     {
@@ -42,6 +44,7 @@ class CommentManager extends Manager
 
     /**
      * @param CommentEntity $comment
+     * Add a comment to the database.
      */
     public function addComment(CommentEntity $comment)
     {
@@ -51,19 +54,8 @@ class CommentManager extends Manager
     }
 
     /**
-     * @return bool|\PDOStatement
-     */
-    public function displayReportedComments()
-    {
-        $db = $this->databaseConnect();
-        $comments = $db->prepare('SELECT comment_id, related_post_id, comment_author, comment_content, DATE_FORMAT(comment_date, \'%d/%m/%y - %Hh%imin%ss\') AS comment_date_fr FROM comments_table ORDER BY comment_moderation DESC');
-        $comments->execute();
-
-        return $comments;
-    }
-
-    /**
      * @param int $commentId
+     * Delete the comment matching $commentId from the database.
      */
     public function deleteComment(int $commentId)
     {
@@ -74,6 +66,7 @@ class CommentManager extends Manager
 
     /**
      * @param int $commentId
+     * Signal the comment matching $commentId by incrementing comment_moderation.
      */
     public function signalComment(int $commentId)
     {
@@ -91,6 +84,7 @@ class CommentManager extends Manager
 
     /**
      * @return array
+     * Return comments sorted by comment_moderation DESC.
      */
     public function manageComments()
     {

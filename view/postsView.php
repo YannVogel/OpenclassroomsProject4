@@ -22,7 +22,7 @@ $controller = new PostController();
 
 
         <div class="row border bgColor-postsContent">
-            <div class="col"><?= $post->getPostIntro(); ?></div>
+            <div class="col"><?= $controller->getPostIntro($post->getPostId()); ?></div>
         </div>
     </article>
         <div class="myLine"></div>

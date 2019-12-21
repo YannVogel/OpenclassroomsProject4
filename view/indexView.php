@@ -18,7 +18,7 @@ if($lastPost)
 
 
     <div class="row border bgColor-postsContent">
-        <div class="col"><?= $lastPost->getPostIntro(); ?></div>
+        <div class="col"><?= $controller->getPostIntro($lastPost->getPostId()); ?></div>
     </div>
 </section>
 <?php

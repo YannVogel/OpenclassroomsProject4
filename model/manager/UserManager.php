@@ -5,8 +5,17 @@ namespace Project\Model\Manager;
 use Project\Model\Entity\UserEntity;
 use Project\Model\Manager\Manager;
 
+/**
+ * Class UserManager
+ * @package Project\Model\Manager
+ * Manage users in database.
+ */
 class UserManager extends Manager
 {
+    /**
+     * @return array
+     * Return all the users in the database.
+     */
     public function getUsers()
     {
         $db = $this->databaseConnect();
@@ -17,6 +26,11 @@ class UserManager extends Manager
         return $users->fetchAll(\PDO::FETCH_CLASS, UserEntity::class);
     }
 
+    /**
+     * @param $nickname
+     * @return mixed
+     * Return the user matching $nickname.
+     */
     public function getUser($nickname)
     {
         $db = $this->databaseConnect();
@@ -27,6 +41,10 @@ class UserManager extends Manager
         return $user->fetch();
     }
 
+    /**
+     * @param UserEntity $user
+     * Add a user to the database.
+     */
     public function addUser(UserEntity $user)
     {
         $db = $this->databaseConnect();

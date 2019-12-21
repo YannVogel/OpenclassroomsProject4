@@ -4,9 +4,18 @@ namespace Project\Controller;
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\PostManager;
 
+/**
+ * Class AdminPostController
+ * @package Project\Controller
+ * Control the admin operations affecting the posts.
+ */
 class AdminPostController
 {
 
+    /**
+     * @return false|string
+     * Return the admin panel header.
+     */
     public function getAdminPageHeader()
     {
         ob_start();
@@ -17,6 +26,10 @@ class AdminPostController
     }
 
 
+    /**
+     * @return false|string
+     * Return the admin panel page.
+     */
     public function getAdminPage() {
         ob_start();
 
@@ -25,6 +38,9 @@ class AdminPostController
         return ob_get_clean();
     }
 
+    /**
+     * Set informations in order to add a new post to the database.
+     */
     public function valideAddPost() {
 
         $myPost = new PostEntity();
@@ -37,11 +53,17 @@ class AdminPostController
         header('Location: index.php?adminPage=1&newPostSuccessMessage=1');
     }
 
+    /**
+     * Display an error message if a post couldn't be added to the database.
+     */
     public function failureAddPost() {
 
         header('Location: index.php?adminPage=1&newPostFailureMessage=1');
     }
 
+    /**
+     * Set informations in order to edit a post in the database.
+     */
     public function valideEditPost() {
 
         $myAdmin = new PostManager();
@@ -50,11 +72,17 @@ class AdminPostController
         header('Location: index.php?adminPage=1&editPostSuccessMessage=1');
     }
 
+    /**
+     * Display an error message if a post in the database couldn't be edited.
+     */
     public function failureEditPost() {
 
         header('Location: index.php?adminPage=1&editPostFailureMessage=1');
     }
 
+    /**
+     * Set informations in order to delete a post from the database.
+     */
     public function valideDeletePost() {
 
         $myAdmin = new PostManager();
@@ -63,6 +91,9 @@ class AdminPostController
         header('Location: index.php?adminPage=1&deletePostSuccessMessage=1');
     }
 
+    /**
+     * Display an error message if a post couldn't be deleted from the database.
+     */
     public function failureDeletePost() {
 
         header('Location: index.php?adminPage=1&deletePostFailureMessage=1');

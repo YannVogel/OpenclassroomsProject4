@@ -2,21 +2,47 @@
 
 namespace Project\Model\Entity;
 
+/**
+ * Class PostEntity
+ * @package Project\Model\Entity
+ * Manage posts in database as PHP objects.
+ */
 class PostEntity
 {
-    private $post_id, $post_title, $post_content, $post_date_fr;
+    /**
+     * @var
+     * Contains the unique ID of a post.
+     */
+    private $post_id;
+    /**
+     * @var
+     * Contains the title of a post.
+     */
+    private $post_title;
+    /**
+     * @var
+     * Contains the content of a post.
+     */
+    private $post_content;
+    /**
+     * @var
+     * Contains the formatted date (french format) of a post when it's published.
+     */
+    private $post_date_fr;
+
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getPostId() : int
     {
         return $this->post_id;
     }
 
+
     /**
-     * @param mixed $post_id
-     * @return PostEntity
+     * @param int $post_id
+     * @return $this
      */
     public function setPostId(int $post_id)
     {
@@ -24,17 +50,19 @@ class PostEntity
         return $this;
     }
 
+
     /**
-     * @return mixed
+     * @return string
      */
     public function getPostTitle() : string
     {
         return $this->post_title;
     }
 
+
     /**
-     * @param mixed $post_title
-     * @return PostEntity
+     * @param string $post_title
+     * @return $this
      */
     public function setPostTitle(string $post_title)
     {
@@ -42,17 +70,19 @@ class PostEntity
         return $this;
     }
 
+
     /**
-     * @return mixed
+     * @return string
      */
     public function getPostContent() : string
     {
         return $this->post_content;
     }
 
+
     /**
-     * @param mixed $post_content
-     * @return PostEntity
+     * @param string $post_content
+     * @return $this
      */
     public function setPostContent(string $post_content)
     {
@@ -60,10 +90,6 @@ class PostEntity
         return $this;
     }
 
-    public function getPostIntro() : string
-    {
-        return substr(strip_tags($this->post_content), 0, 1000) . '<a href="index.php?displayPost=' . $this->getPostId() . '">...lire la suite</a>';
-    }
 
     /**
      * @return mixed
@@ -73,14 +99,14 @@ class PostEntity
         return $this->post_date_fr;
     }
 
+
     /**
-     * @param mixed $post_date
-     * @return PostEntity
+     * @param $post_date_fr
+     * @return $this
      */
     public function setPostDate($post_date_fr)
     {
         $this->post_date_fr = $post_date_fr;
         return $this;
     }
-
 }
