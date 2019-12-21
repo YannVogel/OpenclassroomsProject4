@@ -6,6 +6,13 @@ use Project\Model\Manager\UserManager;
 
 class AdminUserController
 {
+
+    const NICKNAME_NOT_AVAILABLE = "Ce pseudonyme n'est pas disponible.";
+    const NICKNAME_NOT_CORRECT = "Le format du pseudonyme est incorrect (lettres et chiffres uniquement).";
+    const PASSWORDS_DONT_MATCH = "Les mots de passe entrés ne correspondent pas.";
+    const INFORMATIONS_ARE_MISSING = "Merci de remplir toutes les données du formulaire afin de valider votre inscription.";
+
+
     public function valideAddUser()
     {
         $user = new UserEntity();
@@ -18,9 +25,9 @@ class AdminUserController
         header('Location: index.php?newUserSuccessMessage=1');
     }
 
-    public function failureAddUser() {
-
-        header('Location: index.php?newUserFailureMessage=1');
+    public function failureAddUser(int $errorNumber)
+    {
+        header('Location: index.php?newUserFailureMessage=' . $errorNumber);
     }
 
     public function isNicknameAvailable(string $nickname){
