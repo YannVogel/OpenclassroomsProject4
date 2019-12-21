@@ -38,9 +38,6 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
 
 }else {
 
-?>
-    <div>Vous n'avez pas le droit d'être ici...</div>
-    <button id="adminPanelQuitButton" class="btn btn-success">Page d'accueil<span class="fa faButtonRight fa-home"></span></button>
-<?php
+header('Location: index.php');
 }
 ?>

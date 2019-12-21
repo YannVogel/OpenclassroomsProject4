@@ -3,8 +3,6 @@
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\PostManager;
 
-
-// Ici se trouve le code pour supprimer un billet
 if(!isset($_GET['postId'])) {
     $myAdmin = new PostManager();
     $data = $myAdmin->getPosts();

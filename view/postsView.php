@@ -15,13 +15,13 @@ $controller = new PostController();
                 <h3 class="h3"><?= $post->getPostTitle(); ?></h3>
             </div>
         </div>
-        <div class="row font-weight-bold bgColor-azureishWhite">
+        <div class="row font-weight-bold bgColor-headers">
             <span class="col col-8">publié le <?= $post->getPostDate(); ?></span>
             <span class="col col-4 text-right">Nombre de commentaire : <?= $controller->getNumberOfComments($post->getPostId()) ?></span>
         </div>
 
 
-        <div class="row border bgColor-floralWhite">
+        <div class="row border bgColor-postsContent">
             <div class="col"><?= $post->getPostIntro(); ?></div>
         </div>
     </article>

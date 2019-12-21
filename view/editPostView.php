@@ -3,10 +3,6 @@
 use Project\Model\Entity\PostEntity;
 use Project\Model\Manager\PostManager;
 
-?>
-
-<!-- Ici se trouve le code pour modifier un billet existant -->
-<?php
 if(!isset($_GET['editPostId'])) {
     $myAdmin = new PostManager();
     $data = $myAdmin->getPosts();
@@ -24,7 +20,7 @@ if(!isset($_GET['editPostId'])) {
     $post = $myAdmin->getPost($_GET['editPostId']);
     /** @var PostEntity $post */
     ?>
-    <form id='formEditPostView' action=".?editPostId=<?= $post->getPostId() ?>" class="container" method="post">
+    <form action=".?editPostId=<?= $post->getPostId() ?>" class="container" method="post">
         <div class="form-group">
             <label for="editPostTitle">Titre du billet : </label>
             <input id="editPostTitle" name="editPostTitle" type="text" class="form-control"

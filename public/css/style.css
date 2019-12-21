@@ -1,5 +1,5 @@
 body {
-    position: relative;
+    background-color: #FAFCFD ;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,25 +12,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* -------------------- COLORS PALETTE -------------------- */
-.color-floralWhite {
-    color: #fffaf0;
+.bgColor-headers {
+    background-color: #DBE9F4;
 }
 
-.bgColor-floralWhite {
-    background-color: #fffaf0;
+.color-siteTitle {
+    color: #007BFF;
 }
 
-.color-azureishWhite {
-    color: #dbe9f4;
+.bgColor-postsContent {
+    background-color: #FFFAF0;
 }
 
-.bgColor-azureishWhite {
-    background-color: #dbe9f4;
+.bgColor-commentsSection {
+    background-color: #FFFFFF;
+}
+
+.bgColor-commentMessages {
+    background-color: rgba(228, 241, 248, 0.6);
 }
 
 
-
-
+/* -------------------------------------------------------- */
 
 img#jeanForteroche {
     width: 512px;
@@ -53,20 +56,23 @@ img#jeanForteroche {
     margin-left: 5px;
 }
 
+.faButtonLeft {
+    margin-right: 5px;
+}
+
 header {
     border: 1px black solid;
-    position: relative;
 }
 
 .myLine {
     border: 1px black solid;
     opacity: 0.2;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .myCommentLine {
     border: 1px black solid;
     opacity: 0.2;
-    margin: 10px 0;
+    margin: 10px 0 20px;
     width: 30%;
 }
