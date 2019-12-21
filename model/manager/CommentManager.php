@@ -5,8 +5,17 @@ namespace Project\Model\Manager;
 use Project\Model\Entity\CommentEntity;
 use Project\Model\Manager\Manager;
 
+/**
+ * Class CommentManager
+ * @package Project\Model\Manager
+ * Manage comments in database
+ */
 class CommentManager extends Manager
 {
+    /**
+     * @param int $commentId
+     * @return CommentEntity
+     */
     public function getComment(int $commentId) : CommentEntity
     {
         $db = $this->databaseConnect();
@@ -18,6 +27,10 @@ class CommentManager extends Manager
         return $comment->fetch();
     }
 
+    /**
+     * @param int $postId
+     * @return array
+     */
     public function getComments(int $postId)
     {
         $db = $this->databaseConnect();
@@ -27,6 +40,9 @@ class CommentManager extends Manager
         return $comments->fetchAll(\PDO::FETCH_CLASS, CommentEntity::class);
     }
 
+    /**
+     * @param CommentEntity $comment
+     */
     public function addComment(CommentEntity $comment)
     {
         $db = $this->databaseConnect();
@@ -34,6 +50,9 @@ class CommentManager extends Manager
         $comments->execute(array($comment->getRelatedPostId(), $comment->getCommentAuthor(), $comment->getCommentContent()));
     }
 
+    /**
+     * @return bool|\PDOStatement
+     */
     public function displayReportedComments()
     {
         $db = $this->databaseConnect();
@@ -43,6 +62,9 @@ class CommentManager extends Manager
         return $comments;
     }
 
+    /**
+     * @param int $commentId
+     */
     public function deleteComment(int $commentId)
     {
         $db = $this->databaseConnect();
@@ -50,6 +72,9 @@ class CommentManager extends Manager
         $req->execute(array($commentId));
     }
 
+    /**
+     * @param int $commentId
+     */
     public function signalComment(int $commentId)
     {
         $comment = $this->getComment($commentId);
@@ -64,6 +89,9 @@ class CommentManager extends Manager
 
     }
 
+    /**
+     * @return array
+     */
     public function manageComments()
     {
         $db = $this->databaseConnect();
