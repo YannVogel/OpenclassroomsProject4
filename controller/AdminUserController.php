@@ -7,10 +7,10 @@ use Project\Model\Manager\UserManager;
 class AdminUserController
 {
 
-    const NICKNAME_NOT_AVAILABLE = "Ce pseudonyme n'est pas disponible.";
-    const NICKNAME_NOT_CORRECT = "Le format du pseudonyme est incorrect (lettres et chiffres uniquement).";
-    const PASSWORDS_DONT_MATCH = "Les mots de passe entrés ne correspondent pas.";
-    const INFORMATIONS_ARE_MISSING = "Merci de remplir toutes les données du formulaire afin de valider votre inscription.";
+    private const NICKNAME_NOT_AVAILABLE = "Ce pseudonyme n'est pas disponible.";
+    private const NICKNAME_NOT_CORRECT = "Le format du pseudonyme est incorrect (lettres et chiffres uniquement).";
+    private const PASSWORDS_DONT_MATCH = "Les mots de passe entrés ne correspondent pas.";
+    private const INFORMATIONS_ARE_MISSING = "Merci de remplir toutes les données du formulaire afin de valider votre inscription.";
 
 
     public function valideAddUser()

@@ -24,10 +24,10 @@ include('view/connectionView.php');
 include('view/inscriptionView.php');
 ?>
 
-<header class="container bgColor-azureishWhite">
+<header class="container bgColor-headers">
     <div class="row">
         <div class="col text-center">
-            <h1 class="h1">Billet simple pour l'Alaska</h1>
+            <h1 class="h1 color-siteTitle">Billet simple pour l'Alaska</h1>
             <br/>
             <h2 class="navbar-brand">Le site officiel de Jean Forteroche</h2>
         </div>
@@ -36,10 +36,10 @@ include('view/inscriptionView.php');
         <div class="col text-center">
             <ul class="nav flex-row justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil<span class="fa faButtonRight fa-home"></span></a>
+                    <a class="nav-link" href="index.php"><span class="fa faButtonLeft fa-home" style="color:black"></span>Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres<span class="fa faButtonRight fa-book"></span></a>
+                    <a class="nav-link" href="index.php?postsPage=1"><span class="fa faButtonLeft fa-book" style="color:brown"></span>Tous les chapitres</a>
                 </li>
             </ul>
             <?php

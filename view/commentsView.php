@@ -5,17 +5,24 @@ use Project\Controller\AdminUserController;
 $myAdmin = new AdminUserController();
 ?>
 
-<section class="container mt-4 border">
+<section class="container mt-4 mb-4 pb-2 border bgColor-commentsSection">
     <div class="row">
-        <div class="col col-12 text-center font-weight-bold bg-color2 mb-2">Espace commentaires :</div>
+        <div class="col col-12 text-center font-weight-bold mb-2 bgColor-headers">Espace commentaires :</div>
     </div>
 <?php
 
 if($comments) {
-
+$hideFirstLine = true;
 //Afficher commentaires
     /** @var CommentEntity $comment */
-    foreach ($comments as $comment) { ?>
+    foreach ($comments as $comment) {
+        if(!$hideFirstLine)
+{
+    ?>
+    <div class="myCommentLine"></div>
+    <?php
+}?>
+
 <div class="col col-12">
         <div class="col col-12 text-center"><strong><?= $comment->getCommentAuthor() ?></strong> a posté un commentaire
             le <?= $comment->getCommentDate() ?>
@@ -41,10 +48,11 @@ if($comments) {
             }
             ?>
             </div>
-        <div class="col col-12"><?= $comment->getCommentContent() ?></div>
+        <div class="col col-12 bgColor-commentMessages"><?= $comment->getCommentContent() ?></div>
 </div>
-        <div class="myCommentLine"></div>
+
         <?php
+        $hideFirstLine = false;
     }
 }else
 {
@@ -61,9 +69,10 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
 } else   //Sinon, afficher proposition de se connecter
 {
     ?>
+    <div class="myLine"></div>
     <div class="col col-12 text-center">Vous devez vous <a data-toggle="modal" href="#connectionForm">connecter</a> pour publier un commentaire.</div>
     <?php
 }
 
 ?>
-        </section>
+</section>

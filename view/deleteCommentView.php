@@ -11,7 +11,7 @@ $data = $myAdmin->manageComments();
 foreach ($data as $comment) {
         ?>
     <div class="container">
-        <div class="col col-12 bg-info text-center">
+        <div class="col col-12 text-center">
             <?= $comment->getCommentAuthor() ?> le <?= $comment->getCommentDate() ?> | Niveau de signalement : <?= $comment->getCommentModeration() ?>
         </div>
         <div class="col col-12">
