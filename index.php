@@ -10,6 +10,7 @@ use Project\Controller\AdminPostController;
 use Project\Controller\AdminCommentController;
 use Project\Controller\AdminUserController;
 
+$controller = new PostController();
 
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 {
@@ -77,9 +78,8 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 
 /* -------------------- PAGES À AFFICHER -------------------- */
 
-if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
-
-    $controller = new PostController();
+if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "" AND $controller->doesPostExist($_GET['displayPost']))
+{
     $pageTitle = $controller->getPageTitle($_GET['displayPost']);
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getPostPage($_GET['displayPost']);
@@ -96,14 +96,12 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
 
 }elseif(isset($_GET['postsPage']) AND $_GET['postsPage'] === '1') {
 
-    $controller = new PostController();
     $pageTitle = 'Tous les chapitres publiés | ';
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getPostsPage();
 
 }else {
 
-    $controller = new PostController();
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getHomePage();
 }

@@ -64,21 +64,21 @@ class PostController
         return ob_get_clean();
     }
 
-    public function getFaqPage()
-    {
-        ob_start();
-
-        include('view/faqView.php');
-
-        return ob_get_clean();
-    }
-
     public function getNumberOfComments($postId)
     {
         $postManager = new PostManager();
 
         return $postManager->numberOfComments($postId);
 
+    }
+
+    public function doesPostExist($postId)
+    {
+        $postManager = new PostManager();
+        $post = $postManager->getPost($postId);
+        if($post){return 1;}
+
+        return 0;
     }
 
 }

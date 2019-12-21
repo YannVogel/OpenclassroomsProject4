@@ -52,7 +52,7 @@ $(window).on('load',function() {
     $('#deletePostFailureMessage').fadeOut(5000);
 
     $('#newUserSuccessMessage').fadeOut(5000);
-    $('#newUserFailureMessage').fadeOut(5000);
+    $('#newUserFailureMessage').fadeOut(10000);
 
     $('#connectionUserFailureMessage').fadeOut(5000);
 

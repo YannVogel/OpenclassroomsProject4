@@ -1,4 +1,6 @@
 <?php
+use Project\Controller\AdminUserController;
+
 if (isset($_GET['newUserSuccessMessage']) AND $_GET['newUserSuccessMessage'] === '1')
 {
     ?>
@@ -14,7 +16,7 @@ if (isset($_GET['newUserSuccessMessage']) AND $_GET['newUserSuccessMessage'] ===
 
 
 
-if(isset($_GET['newUserFailureMessage']) AND $_GET['newUserFailureMessage'] === '1')
+if(isset($_GET['newUserFailureMessage']))
 {
     ?>
     <div id="newUserFailureMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -22,7 +24,14 @@ if(isset($_GET['newUserFailureMessage']) AND $_GET['newUserFailureMessage'] === 
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Fermer</span>
         </button>
-        <strong>Erreur !</strong> Une erreur est survenue durant la création de votre profil...
+        <strong>Erreur !</strong>
+        <?php
+        if($_GET['newUserFailureMessage'] === '1'){echo AdminUserController::NICKNAME_NOT_AVAILABLE;}
+        elseif($_GET['newUserFailureMessage'] === '2'){echo AdminUserController::NICKNAME_NOT_CORRECT;}
+        elseif($_GET['newUserFailureMessage'] === '3'){echo AdminUserController::PASSWORDS_DONT_MATCH;}
+        elseif($_GET['newUserFailureMessage'] === '4'){echo AdminUserController::INFORMATIONS_ARE_MISSING;}
+        else{echo "Une erreur inconnue s'est produite.";}
+        ?>
     </div>
     <?php
 }
