@@ -36,25 +36,25 @@ include('view/inscriptionView.php');
         <div class="col text-center">
             <ul class="nav flex-row justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
+                    <a class="nav-link" href="index.php">Accueil<span class="fa faButtonRight fa-home"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres</a>
+                    <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres<span class="fa faButtonRight fa-book"></span></a>
                 </li>
-                <li class="nav-item">
+            </ul>
             <?php
             if(!isset($_SESSION['nickname']) OR !isset($_SESSION['password']) OR trim($_SESSION['nickname']) === '' OR trim($_SESSION['password']) === '')
             {
             ?>
-            <button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
-            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary">Inscription<span class="fa faButtonRight fa-edit"></span></button>
+            <button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary btn-sm">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
+            <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary btn-sm">Inscription<span class="fa faButtonRight fa-edit"></span></button>
           <?php
         }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
             if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
                 if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
                     ?>
 
-                    <button id="adminPanelEnterButton" class="btn btn-danger">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
+                    <button id="adminPanelEnterButton" class="btn btn-danger btn-sm">Admin Panel<span class="fa faButtonRight fa-lock"></span></button>
                     <?php
                 }
             }else {
@@ -62,8 +62,7 @@ include('view/inscriptionView.php');
             }
         }
         ?>
-                </li>
-            </ul>
+
         </div>
     </div>
     <?php

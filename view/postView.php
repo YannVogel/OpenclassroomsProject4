@@ -15,7 +15,7 @@ $controller = new PostController();
     </div>
     <div class="row border bgColor-floralWhite">
         <div class="col col-12"><?= $post->getPostContent(); ?></div>
-        <div class="col col-12 text-right"><span class="font-weight-bold">FIN DU CHAPITRE</span><br/><a href="index.php">Retour à l'accueil<span class="fa fa-home"></span></a></div>
+        <div class="col col-12 text-right"><span class="font-weight-bold">FIN DU CHAPITRE</span><br/><a href="index.php">Retour à l'accueil<span class="fa faButtonRight fa-home"></span></a></div>
 
     </div>
 </section>
