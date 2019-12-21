@@ -101,13 +101,6 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "") {
     $pageHeader = $controller->getRegularHeader();
     $pageContent = $controller->getPostsPage();
 
-}elseif(isset($_GET['faqPage']) AND $_GET['faqPage'] === '1'){
-
-    $controller = new PostController();
-    $pageTitle = 'Le concept de ce site | ';
-    $pageHeader = $controller->getRegularHeader();
-    $pageContent = $controller->getFaqPage();
-
 }else {
 
     $controller = new PostController();

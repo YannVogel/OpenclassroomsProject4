@@ -37,9 +37,6 @@ include('view/inscriptionView.php');
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?postsPage=1">Tous les chapitres</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?faqPage=1">Concept du site</a>
-                </li>
             </ul>
             <?php
             if(!isset($_SESSION['nickname']) OR !isset($_SESSION['password']) OR trim($_SESSION['nickname']) === '' OR trim($_SESSION['password']) === '')
