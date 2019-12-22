@@ -39,7 +39,7 @@ $hideFirstLine = true;
                     <span class="text-info">(C'est vous qui avez posté ce commentaire !)</span>
                 <?php
                 }
-                if($myAdmin->isUserAnAdmin($_SESSION['nickname']))
+                if($myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
                 {
                 ?>
                     <a class="btn btn-primary btn-sm rounded-circle" href="index.php?adminPage=1"><span title="Accéder au panneau d'administration" class="fa fa-lock"></span></a>

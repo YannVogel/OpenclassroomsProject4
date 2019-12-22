@@ -18,17 +18,14 @@ if( $confirmation1 AND $confirmation2 AND $confirmation3 AND $confirmation4 AND 
 {
     if (!$controller->isNicknameAvailable($_POST['nicknameInscriptionInput'])) {
 
-        echo 'Ce pseudonyme n\'est pas disponible !';
         $controller->failureAddUser(1);
 
     } elseif (!preg_match($regex, $_POST['nicknameInscriptionInput'])) {
 
-        echo 'Le format du pseudo ' . $_POST['nicknameInscriptionInput'] . ' n\'est pas accepté';
         $controller->failureAddUser(2);
 
     } elseif (!$controller->doPasswordsMatch($_POST['passwordInscriptionInput'], $_POST['passwordInscriptionConfirmationInput'])) {
 
-        echo 'Les mdp entrés ne correspondent pas !';
         $controller->failureAddUser(3);
 
     }else {
@@ -36,6 +33,6 @@ if( $confirmation1 AND $confirmation2 AND $confirmation3 AND $confirmation4 AND 
     }
 
 }else {
-    echo 'Merci de remplir toutes les données du formulaire afin de valider votre inscription';
+
     $controller->failureAddUser(4);
 }

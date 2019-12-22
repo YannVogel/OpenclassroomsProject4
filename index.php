@@ -11,11 +11,30 @@ use Project\Controller\AdminCommentController;
 use Project\Controller\AdminUserController;
 
 $controller = new PostController();
+$adminUserController = new AdminUserController();
+
+if(isset($_POST['nicknameInput']) AND trim($_POST['nicknameInput']) !== '' AND isset($_POST['passwordInput']) AND trim($_POST['passwordInput']) !== '' AND isset($_GET['newConnection']) AND $_GET['newConnection'] === '1')
+{
+    if($adminUserController->isConnectionValid($_POST['nicknameInput'], $_POST['passwordInput']))
+    {
+        $nickname = htmlspecialchars($_POST['nicknameInput']);
+        $password = $_POST['passwordInput'];
+        $_SESSION['nickname'] = $nickname;
+        $_SESSION['password'] = $password;
+
+        header('Location: index.php?connectionSuccessMessage=1');
+
+    }else{
+
+        header('Location: index.php?connectionFailureMessage=1');
+    }
+
+}
 
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 {
-    $adminUserController = new AdminUserController();
-    if($adminUserController->isUserAnAdmin($_SESSION['nickname'])) {
+
+    if($adminUserController->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password'])) {
 
         if (isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset($_POST['newPostContent']) && trim($_POST['newPostContent']) !== "") {
 
@@ -76,7 +95,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 
 }
 
-/* -------------------- PAGES À AFFICHER -------------------- */
+/* -------------------- PAGES TO DISPLAY -------------------- */
 
 if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "" AND $controller->doesPostExist($_GET['displayPost']))
 {

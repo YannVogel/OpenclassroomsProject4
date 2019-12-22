@@ -12,10 +12,7 @@ $('#passwordInput').attr("value", store.getLocal("password"));
 
 
 
-$('#endConnectionButton').on('click', function(e) {
-    e.preventDefault();
-    window.location.href='logout.php';
-});
+
 
 $('#adminPanelEnterButton').on('click', function(e) {
     e.preventDefault();
@@ -63,7 +60,8 @@ $(window).on('load',function() {
 
     $('#deleteCommentSuccessMessage').fadeOut(5000);
 
-    $('#welcomeMessage').fadeOut(5000);
+    $('#connectionSuccessMessage').fadeOut(5000);
+    $('#connectionFailureMessage').fadeOut(5000);
 });
 
 $('#previousButton').on('click', function(e) {
