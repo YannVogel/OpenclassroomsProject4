@@ -56,7 +56,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
                 <?php
                 }
                 ?>
-                <a href="logout.php"><span class="fa faButtonRight fa-sign-out-alt text-danger" title="Se déconnecter"></span></a>
+                <a href="logout.php"><span class="fa faButtonRight faButtonLeft fa-sign-out-alt text-danger" title="Se déconnecter"></span></a>
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@ $controller = new PostController();
         </div>
         <div class="row font-weight-bold bgColor-headers">
             <span class="col col-8">publié le <?= $post->getPostDate(); ?></span>
-            <span class="col col-4 text-right">Nombre de commentaire : <?= $controller->getNumberOfComments($post->getPostId()) ?></span>
+            <span class="col col-4 text-right">Nombre de commentaire<?php if($controller->getNumberOfComments($post->getPostId()) > 1){echo 's';} ?> : <?= $controller->getNumberOfComments($post->getPostId()) ?></span>
         </div>
 
 
