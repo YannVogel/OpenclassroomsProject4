@@ -1,5 +1,0 @@
-<strong>BIENVENUE sur mon site, cher lecteur.</strong><br />
-Vous n'êtes pas sans savoir que je travaille d'arrache-pied sur mon prochain roman, intitulé <h2 class="text-primary font-weight-bold">"Billet simple pour l'Alaska"</h2>. Dans ce récit, je vous promets de mélanger divers genres qui ont fait la renommée de mes précédents livres : <h4>aventure</h4>, <h4>intrigue</h4>, <h4>romance</h4>, <h4>conflits géo-politiques</h4> et une touche de <h4>cyberpunk</h4> !<br />
-Écrire cette histoire est un travail de longue haleine et je ne veux pas laisser mes fans sans rien avoir à lire pendant une longue période de temps. C'est pour cela que j'ai décidé de publier mon livre sur ce site, chapitre par chapitre !
-Je ne peux garantir un rythme de parution régulier mais j'essayerai de respecter la publication d'un chapitre par mois.<br />
-Sachez que je passe mes journées sur ce nouveau roman et le peu de temps libre que je m'accorde sert à me documenter pour vous fournir des textes de toujours aussi bonne qualité !

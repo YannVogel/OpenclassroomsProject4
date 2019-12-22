@@ -125,7 +125,7 @@ class PostController
         $postManager = new PostManager();
         $post = $postManager->getPost($postId);
         /** @var PostEntity $post */
-        return substr($post->getPostContent(), 0, 1000) . '<a href="index.php?displayPost=' . $post->getPostId() . '">...lire la suite</a>';
+        return substr($post->getPostContent(), 0, 1000) . '...<br /><a class="float-right" href="index.php?displayPost=' . $post->getPostId() . '">Lire la suite...</a>';
     }
 
 }

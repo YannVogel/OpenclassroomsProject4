@@ -12,11 +12,21 @@
                     <form class="col" method="post" action="index.php?welcomeMessage=1">
                         <div class="form-group">
                             <label for="nicknameInput" class="form-control-label">Pseudo</label>
-                            <input type="text" class="form-control" name ="nicknameInput" id="nicknameInput" required>
-                        </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span class="fa fa-user"></span></span>
+                                </div>
+                                <input type="text" class="form-control" name ="nicknameInput" id="nicknameInput" required>
+                            </div>
+                            </div>
                         <div class="form-group">
                             <label for="passwordInput" class="form-control-label">Mot de passe</label>
-                            <input type="password" class="form-control" name="passwordInput" id="passwordInput" required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><span class="fa fa-lock"></span></span>
+                                </div>
+                                <input type="password" class="form-control" name="passwordInput" id="passwordInput" required>
+                            </div>
                         </div>
                         <button id="connectionButton" type="submit" class="btn btn-primary pull-right">Se connecter</button>
                     </form>
