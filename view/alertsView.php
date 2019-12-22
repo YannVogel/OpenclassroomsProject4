@@ -171,15 +171,28 @@ if(isset($_GET['deleteCommentSuccessMessage']) AND $_GET['deleteCommentSuccessMe
     <?php
 }
 
-if(isset($_GET['welcomeMessage']) AND $_GET['welcomeMessage'] === '1')
+if(isset($_GET['connectionSuccessMessage']) AND $_GET['connectionSuccessMessage'] === '1')
 {
     ?>
-    <div id="welcomeMessage" class="alert alert-primary alert-dismissible fade show" role="alert">
+    <div id="connectionSuccessMessage" class="alert alert-primary alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Fermer</span>
         </button>
         Bon retour sur mon site <strong><?= $_SESSION['nickname'] ?></strong> !
+    </div>
+    <?php
+}
+
+if(isset($_GET['connectionFailureMessage']) AND $_GET['connectionFailureMessage'] === '1')
+{
+    ?>
+    <div id="connectionFailureMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Fermer</span>
+        </button>
+        <strong>Erreur !</strong> Identifiants incorrects...
     </div>
     <?php
 }

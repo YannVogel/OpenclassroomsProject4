@@ -46,7 +46,7 @@ img#jeanForteroche {
 #newUserSuccessMessage,  #newUserFailureMessage, #connectionUserFailureMessage,
 #newCommentSuccessMessage, #newCommentFailureMessage,
 #signalCommentSuccessMessage, #deleteCommentSuccessMessage,
-#welcomeMessage {
+#connectionSuccessMessage, #connectionFailureMessage {
     position: fixed;
     width: 100%;
     z-index: 1000;

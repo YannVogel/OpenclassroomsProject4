@@ -112,14 +112,23 @@ class AdminUserController
 
     /**
      * @param string $nickname
+     * @param string $password
      * @return mixed
-     * Return true is the user matching $nickname is an admin, otherwise return false.
+     * First, verify if the connection is valid (nickname & password must match).
+     * Return true if the user matching $nickname is an admin, otherwise return false.
      * The user is an admin only if his user_admin_rights are set to '1'.
      */
-    public function isUserAnAdmin(string $nickname) {
-        $userManager = new UserManager();
-        $user = $userManager->getUser($nickname);
+    public function isUserAnAdmin(string $nickname, string $password)
+    {
+        if($this->isConnectionValid($nickname, $password))
+        {
+            $userManager = new UserManager();
+            $user = $userManager->getUser($nickname);
 
-        return $user['user_admin_rights'];
+            return $user['user_admin_rights'];
+        }
+
+        return false;
+
     }
 }

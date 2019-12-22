@@ -3,27 +3,10 @@ use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
 
-if(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND $myAdmin->isConnectionValid($_POST['nicknameInput'], $_POST['passwordInput']))
-{
-    $nickname = htmlspecialchars($_POST['nicknameInput']);
-    $password = $_POST['passwordInput'];
-    $_SESSION['nickname'] = $nickname;
-    $_SESSION['password'] = $password;
-} elseif(isset($_POST['nicknameInput']) AND isset($_POST['passwordInput']) AND trim($_POST['nicknameInput']) !== "" AND  trim($_POST['passwordInput']) !== "") { ?>
-    <div id="connectionUserFailureMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Fermer</span>
-        </button>
-        <strong>Erreur !</strong> Identifiants incorrects...
-    </div>
-    <?php
-}
 include('view/alertsView.php');
 include('view/connectionView.php');
 include('view/inscriptionView.php');
 ?>
-
 <header class="container bgColor-headers">
     <div class="row">
         <div class="col text-center">
@@ -49,31 +32,34 @@ include('view/inscriptionView.php');
             <button data-toggle="modal" data-target="#connectionForm" class="btn btn-primary btn-sm">Connexion<span class="fa faButtonRight fa-toggle-on"></span></button>
             <button data-toggle="modal" data-target="#inscriptionForm" class="btn btn-primary btn-sm">Inscription<span class="fa faButtonRight fa-edit"></span></button>
           <?php
-        }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
-            if ($myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
-                if ($myAdmin->isUserAnAdmin($_SESSION['nickname'])) {
-                    ?>
+        }elseif(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND !$myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']))
+          {
 
-                    <button id="adminPanelEnterButton" class="btn btn-danger btn-sm">Administration<span class="fa faButtonRight fa-lock"></span></button>
-                    <?php
-                }
-            }else {
                 session_destroy();
-            }
         }
         ?>
 
         </div>
     </div>
-    <?php
-    if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
-        ?>
+</header>
+<?php
+if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
+    ?>
+    <div class="container">
         <div class="row">
-            <div class="col text-center">
-                Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong> (<a id="endConnectionButton" href="#">Se déconnecter</a>)
+            <div class="col text-right">
+                Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong>
+                <?php
+                if ($myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password'])) {
+                ?>
+                <button id="adminPanelEnterButton" class="btn btn-danger btn-sm float-right">Administration<span class="fa faButtonRight fa-lock"></span></button>
+                <?php
+                }
+                ?>
+                <a href="logout.php"><span class="fa faButtonRight fa-sign-out-alt text-danger" title="Se déconnecter"></span></a>
             </div>
         </div>
-        <?php
-    }
-    ?>
-</header>
+    </div>
+    <?php
+}
+?>
