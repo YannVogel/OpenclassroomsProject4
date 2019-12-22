@@ -6,7 +6,9 @@
             "email": "58270365+Flawxy@users.noreply.github.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
     "autoload": {
         "psr-0": {
             "Project\\Model\\Entity": "model/entity/",
