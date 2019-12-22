@@ -100,3 +100,23 @@ if(store.getSession('activeTab') === '2') {
     ActiveTab.setActive();
 }
 
+for(let i=0; i <5; i++) {
+    switch (i) {
+        case 0:
+            $(`.moderationLevel${i}`).css('color', 'green');
+            break;
+        case 1:
+            $(`.moderationLevel${i}`).css('color', 'yellow');
+            break;
+        case 2:
+            $(`.moderationLevel${i}`).css('color', 'yellow');
+            break;
+        case 3:
+            $(`.moderationLevel${i}`).css('color', 'orange');
+            break;
+        case 4:
+            $(`.moderationLevel${i}`).css('color', 'orange');
+            break;
+    }
+}
+

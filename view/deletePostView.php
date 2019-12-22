@@ -6,25 +6,44 @@ use Project\Model\Manager\PostManager;
 if(!isset($_GET['postId'])) {
     $myAdmin = new PostManager();
     $data = $myAdmin->getPosts();
+?>
+<section class="container text-center">
+<div class="font-weight-bold">Choisir un article à supprimer :</div>
 
+<?php
     /** @var PostEntity $post */
     foreach ($data as $post) {
         ?>
-        <h2>
-            <a href=".?adminPage=1&postId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a>
-        </h2>
+        <div>
+             <h2 class="h2"><a href=".?adminPage=1&postId=<?= $post->getPostId() ?>"><?= $post->getPostTitle() ?></a></h2>
+        </div>
         <?php
     }
+    ?>
+
+</section>
+<?php
 }elseif(isset($_GET['postId']) && $_GET['postId'] > 0) {
     $myAdmin = new PostManager();
     $post = $myAdmin->getPost($_GET['postId']);
     /** @var PostEntity $post */
     ?>
+    <section class="container border">
+        <div class="row bgColor-headers text-center">
+            <div class="col col-12">
+                <h2 class="h2"><?= $post->getPostTitle() ?></h2>
+            </div>
+            <div class="col col-12">
+                <a class="btn btn-danger" href="index.php?adminPage=1&deletePostId=<?= $post->getPostId() ?>"><span class="fa faButtonLeft fa-trash-alt"></span>SUPPRIMER</a>
+                <button class="btn btn-info" id="previousButton"><span class="fa faButtonLeft fa-undo"></span>Précédent</button>
+            </div>
+        </div>
+        <div class="row bgColor-postsContent">
+            <div class="col col-12">
+                <div><?= $post->getPostContent() ?></div>
 
-    <h2><?= $post->getPostTitle() ?> <a href="index.php?adminPage=1&deletePostId=<?= $post->getPostId() ?>">EFFACER</a></h2>
-    <div><?= $post->getPostContent() ?></div>
-    <button id="previousButton">Précédent</button>
-
-
+            </div>
+        </div>
+    </section>
 <?php
 }
