@@ -36,7 +36,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 
     if($adminUserController->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password'])) {
 
-        if (isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" && isset($_POST['newPostContent']) && trim($_POST['newPostContent']) !== "") {
+        if (isset($_POST['newPostTitle']) && trim($_POST['newPostTitle']) !== "" AND isset($_POST['newPostContent']) AND trim(strip_tags($_POST['newPostContent'])) !== "") {
 
             $adminController = new AdminPostController();
             $adminController->valideAddPost();

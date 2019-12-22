@@ -7,7 +7,7 @@
         <label for="newPostContent">Contenu du billet : </label>
         <textarea id="newPostContent" name="newPostContent" class="form-control"></textarea>
     </div>
-    <input type="submit" value="Valider" />
+    <button class="btn btn-primary" type="submit"><span class="fa faButtonLeft fa-pen"></span>Publier</button>
 </form>
 
 
