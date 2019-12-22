@@ -36,7 +36,7 @@ if($lastPost)
     <div class="myLine"></div>
     <div class="row">
         <div class="col col-12">
-            <img id="jeanForteroche" src="public/images/JeanForteroche.jpg" class="float-left mr-2" alt="Jean Forteroche prenant la pose"/>
+            <img id="jeanForteroche" src="public/images/JeanForteroche.jpg" class="float-left mr-2 img-fluid img-thumbnail" alt="Jean Forteroche prenant la pose"/>
             <div><strong>BIENVENUE sur mon site, cher lecteur.</strong>
                 Vous n'êtes pas sans savoir que je travaille d'arrache-pied sur mon prochain roman, intitulé <h2 class="text-primary font-weight-bold">"Billet simple pour l'Alaska"</h2>.
                 Dans ce récit, je vous promets de mélanger divers genres qui ont fait la renommée de mes précédents livres : <h4>aventure</h4>, <h4>intrigue</h4>, <h4>romance</h4>, <h4>conflits géo-politiques</h4> et une touche de <h4>cyberpunk</h4> !</div>
@@ -44,8 +44,8 @@ if($lastPost)
             <p>Je ne peux garantir un rythme de parution régulier mais j'essayerai de respecter la publication d'un chapitre par mois. Sachez que je passe mes journées sur ce nouveau roman et le peu de temps libre que je m'accorde sert à me documenter afin de vous fournir des textes de toujours aussi bonne qualité !</p>
             <p>En dessous de chaque chapitre publié, vous aurez la possibilité de donner votre avis en laissant un commentaire. Il faudra au préalable vous inscrire et je compte sur vous pour rester courtois quelle que soit la situation !</p>
             <p>Je vous souhaite une bonne navigation sur mon site, en espérant vous faire vivre de belles aventures pendant encore de nombreuses années !</p>
-            <p class="text-right">Littéralement vôtre.</p>
-            <img src="public/images/signature.gif" class="float-right" alt="Signature" />
+            <p class="text-right">- Littéralement vôtre.</p>
+            <img src="public/images/signature.gif" class="float-right img-fluid" alt="Signature" />
         </div>
     </div>
 </section>
