@@ -8,7 +8,7 @@ use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
 
-if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
+if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
 {
 ?>
     <header class="container bgColor-headers">
