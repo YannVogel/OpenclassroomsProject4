@@ -30,8 +30,8 @@ $hideFirstLine = true;
             if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
                 if($comment->getCommentAuthor() !== $_SESSION['nickname']) {
                     ?>
-                    <a href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalCommentId=<?= $comment->getCommentId() ?>"><span
-                            title="Signaler ce commentaire" class="fa fa-exclamation-triangle" style="color:red"></span></a>
+                    <a class="btn btn-danger btn-sm rounded-circle" href="index.php?displayPost=<?= $_GET['displayPost'] ?>&signalCommentId=<?= $comment->getCommentId() ?>"><span
+                            title="Signaler ce commentaire" class="fa fa-exclamation-triangle"></span></a>
                     <?php
                 }else
                 {
@@ -42,7 +42,7 @@ $hideFirstLine = true;
                 if($myAdmin->isUserAnAdmin($_SESSION['nickname']))
                 {
                 ?>
-                    <a href="index.php?adminPage=1"><span title="Accéder au panneau d'administration" class="fa fa-lock" style="color:blue"></span></a>
+                    <a class="btn btn-primary btn-sm rounded-circle" href="index.php?adminPage=1"><span title="Accéder au panneau d'administration" class="fa fa-lock"></span></a>
             <?php
                 }
             }
