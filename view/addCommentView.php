@@ -1,4 +1,4 @@
-<div class="myLine"></div>
+<div class="myLine-lightTheme"></div>
 
 <form action="index.php?displayPost=<?= $_GET['displayPost'] ?>" class="container" method="post">
     <div class="form-group">

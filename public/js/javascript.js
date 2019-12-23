@@ -23,6 +23,9 @@ if(store.getLocal('darkTheme') === 'true')
 
     $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
     $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
+
+    $('.myLine-lightTheme').addClass('myLine-darkTheme');
+    $('.myLine-lightTheme').removeClass('myLine-lightTheme');
 }else {
 
     $('body').removeClass('bgColor-body-darkTheme');
@@ -48,6 +51,9 @@ if(store.getLocal('darkTheme') === 'true')
 
     $('.color-commentMessages-darkTheme').addClass('color-commentMessages-lightTheme');
     $('.color-commentMessages-darkTheme').removeClass('color-commentMessages-darkTheme');
+
+    $('.myLine-darkTheme').addClass('myLine-lightTheme');
+    $('.myLine-darkTheme').removeClass('myLine-darkTheme');
 }
 
 $('#connectionButton').on('click', function() {
@@ -87,6 +93,9 @@ $('#lightThemeOnButton').on('click', function() {
 
     $('.color-commentMessages-darkTheme').addClass('color-commentMessages-lightTheme');
     $('.color-commentMessages-darkTheme').removeClass('color-commentMessages-darkTheme');
+
+    $('.myLine-darkTheme').addClass('myLine-lightTheme');
+    $('.myLine-darkTheme').removeClass('myLine-darkTheme');
 });
 
 $('#darkThemeOnButton').on('click', function() {
@@ -114,6 +123,9 @@ $('#darkThemeOnButton').on('click', function() {
 
     $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
     $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
+
+    $('.myLine-lightTheme').addClass('myLine-darkTheme');
+    $('.myLine-lightTheme').removeClass('myLine-lightTheme');
 })
 
 

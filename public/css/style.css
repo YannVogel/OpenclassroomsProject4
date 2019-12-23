@@ -93,6 +93,18 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.myLine-lightTheme {
+    border: 1px black solid;
+    opacity: 0.2;
+    margin: 20px 0;
+}
+
+.myLine-darkTheme {
+    border: 1px white solid;
+    opacity: 0.8;
+    margin: 20px 0;
+}
+
 /* -------------------------------------------------------- */
 
 
@@ -140,11 +152,7 @@ header {
     border: 1px black solid;
 }
 
-.myLine {
-    border: 1px black solid;
-    opacity: 0.2;
-    margin: 20px 0;
-}
+
 
 .myCommentLine {
     border: 1px black solid;

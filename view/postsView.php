@@ -3,7 +3,7 @@ use Project\Controller\PostController;
 use Project\Model\Entity\PostEntity;
 $controller = new PostController();
 ?>
-<section class="container">
+<section class="container-lg">
     <?php
     /** @var PostEntity $post */
     foreach($posts as $post)
@@ -25,7 +25,7 @@ $controller = new PostController();
             <div class="col"><?= $controller->getPostIntro($post->getPostId()); ?></div>
         </div>
     </article>
-        <div class="myLine"></div>
+        <div class="myLine-lightTheme"></div>
         <?php
     }
     ?>

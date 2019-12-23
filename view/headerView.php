@@ -7,7 +7,7 @@ include('view/alertsView.php');
 include('view/connectionView.php');
 include('view/inscriptionView.php');
 ?>
-<header class="container bgColor-headers">
+<header class="container-lg bgColor-headers">
     <div class="row">
         <div class="col text-center">
             <h1 class="h1 color-siteTitle">Billet simple pour l'Alaska</h1>

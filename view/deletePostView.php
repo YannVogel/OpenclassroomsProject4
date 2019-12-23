@@ -28,7 +28,7 @@ if(!isset($_GET['postId'])) {
     $post = $myAdmin->getPost($_GET['postId']);
     /** @var PostEntity $post */
     ?>
-    <section class="container border">
+    <section class="container-lg border">
         <div class="row bgColor-headers text-center">
             <div class="col col-12">
                 <h2 class="h2"><?= $post->getPostTitle() ?></h2>
