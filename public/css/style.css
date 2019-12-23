@@ -136,6 +136,7 @@ img#jeanForteroche {
 #signalCommentSuccessMessage, #deleteCommentSuccessMessage,
 #connectionSuccessMessage, #connectionFailureMessage {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
 }

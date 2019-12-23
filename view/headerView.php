@@ -3,9 +3,6 @@ use Project\Controller\AdminUserController;
 
 $myAdmin = new AdminUserController();
 
-include('view/alertsView.php');
-include('view/connectionView.php');
-include('view/inscriptionView.php');
 ?>
 <header class="container-lg bgColor-headers">
     <div class="row">
@@ -64,4 +61,8 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
     </div>
     <?php
 }
+include('view/alertsView.php');
+include('view/connectionView.php');
+include('view/inscriptionView.php');
 ?>
+
