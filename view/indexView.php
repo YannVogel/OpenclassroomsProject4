@@ -37,7 +37,7 @@ if($lastPost)
     <div class="row">
         <div class="col col-12 briefSection color-briefSection-lightTheme">
             <img id="jeanForteroche" src="public/images/JeanForteroche.jpg" class="float-left mr-2 img-fluid img-thumbnail" alt="Jean Forteroche prenant la pose"/>
-            <div><strong>BIENVENUE sur mon site, cher lecteur.</strong>
+            <div><strong>BIENVENUE sur mon site, chers lecteurs.</strong>
                 Vous n'êtes pas sans savoir que je travaille d'arrache-pied sur mon prochain roman, intitulé <h4 class="text-primary font-weight-bold">"Billet simple pour l'Alaska"</h4>.
                 Dans ce récit, je vous promets de mélanger divers genres qui ont fait la renommée de mes précédents livres : <h4>aventure</h4>, <h4>intrigue</h4>, <h4>romance</h4>, <h4>conflits géo-politiques</h4> et une touche de <h4>cyberpunk</h4> !</div>
             <p> Écrire cette histoire est un travail de longue haleine et je ne veux pas laisser mes fans sans rien avoir à lire pendant une longue période de temps. C'est pour cela que j'ai décidé de publier mon livre sur ce site, chapitre par chapitre !</p>
