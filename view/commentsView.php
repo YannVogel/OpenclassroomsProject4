@@ -57,7 +57,7 @@ $hideFirstLine = true;
 }else
 {
     ?>
-    <div class="col col-12 text-center">Soyez le premier à poster un commentaire !</div>';
+    <div class="col col-12 text-center">Soyez le premier à poster un commentaire !</div>
     <?php
 }
 

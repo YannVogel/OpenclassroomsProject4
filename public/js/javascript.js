@@ -224,7 +224,7 @@ for(let i=0; i <5; i++) {
     if($(`.moderationLevel${i}`).length !== 0) {
         if (i === 0) {
 
-            $(`.moderationLevel${i}`).css('color', 'green');
+            $(`.moderationLevel${i}`).css('color', 'limegreen');
 
         } else if (i < 3) {
 
