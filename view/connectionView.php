@@ -3,7 +3,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Vos identifiants :</h4>
+                    <div class="modal-title">Vos identifiants :</div>
                     <button type="button" class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
