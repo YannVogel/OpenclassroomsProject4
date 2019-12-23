@@ -7,7 +7,7 @@ if($lastPost)
 ?>
 <section class="container">
     <div class="row mt-4 mb-2">
-        <div class="col col-12 text-center">
+        <div class="col col-12 font-headersTitles colorHeaders-lightTheme text-center">
             <h3 class="h3"><?= $lastPost->getPostTitle(); ?></h3>
         </div>
     </div>
@@ -17,7 +17,7 @@ if($lastPost)
         </div>
 
 
-    <div class="row border bgColor-postsContent">
+    <div class="row border font-postsContent bgColor-postsContent-lightTheme">
         <div class="col"><?= $controller->getPostIntro($lastPost->getPostId()); ?></div>
     </div>
 </section>
@@ -30,12 +30,12 @@ if($lastPost)
 <section class="container">
     <div class="row mt-4">
         <div class="col col-12 text-center">
-            <h3 class="h3">La brève de Jean Forteroche</h3>
+            <h3 class="font-headersTitles colorHeaders-lightTheme h3">Le mot de Jean Forteroche</h3>
         </div>
     </div>
     <div class="myLine"></div>
     <div class="row">
-        <div class="col col-12">
+        <div class="col col-12 briefSection color-briefSection-lightTheme">
             <img id="jeanForteroche" src="public/images/JeanForteroche.jpg" class="float-left mr-2 img-fluid img-thumbnail" alt="Jean Forteroche prenant la pose"/>
             <div><strong>BIENVENUE sur mon site, cher lecteur.</strong>
                 Vous n'êtes pas sans savoir que je travaille d'arrache-pied sur mon prochain roman, intitulé <h2 class="text-primary font-weight-bold">"Billet simple pour l'Alaska"</h2>.

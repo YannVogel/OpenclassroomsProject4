@@ -1,6 +1,15 @@
-body {
-    background-color: #FAFCFD ;
+@font-face {
+    font-family: 'faustinamedium';
+    src: url('../fonts/faustina-medium-webfont.eot');
+    src: url('../fonts/faustina-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/faustina-medium-webfont.woff2') format('woff2'),
+    url('../fonts/faustina-medium-webfont.woff') format('woff'),
+    url('../fonts/faustina-medium-webfont.ttf') format('truetype'),
+    url('../fonts/faustina-medium-webfont.svg#faustinamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -11,6 +20,83 @@ h1, h2, h3, h4, h5, h6 {
     display: inline;
 }
 
+.font-postsContent {
+    font-family: faustinamedium, 'Arial Black', Arial, Verdana, sans-serif;
+}
+
+.font-headersTitles {
+    font-family: "Brush Script MT", 'Arial Black', Arial, Verdana, sans-serif;
+}
+
+/* -------------------- THEME CHANGES -------------------- */
+.bgColor-body-lightTheme {
+    background-color: #FAFCFD ;
+}
+
+.bgColor-postsContent-lightTheme {
+    background-color: #FFFEEE;
+}
+
+.bgColor-body-darkTheme {
+    background-color: #303A44;
+}
+
+.bgColor-postsContent-darkTheme {
+    background-color: #FBF0D9;
+}
+
+.color-briefSection-lightTheme {
+    color: black;
+}
+
+.color-briefSection-darkTheme {
+    color: #E3E3E3;
+}
+
+.colorHeaders-lightTheme {
+    color: black;
+}
+
+.colorHeaders-darkTheme {
+    color: #E3E3E3;
+}
+
+.colorConnectionMessage-lightTheme {
+    color: black;
+}
+
+.colorConnectionMessage-darkTheme {
+    color: #E3E3E3;
+}
+
+.bgColor-commentsSection-lightTheme {
+    background-color: #FFFFFF;
+}
+
+.bgColor-commentMessages-lightTheme {
+    background-color: rgba(228, 241, 248, 0.6);
+}
+
+.bgColor-commentsSection-darkTheme {
+    background-color: #65707c;
+}
+
+.bgColor-commentMessages-darkTheme {
+    background-color: rgba(169, 183, 196, 0.5);
+}
+
+.color-commentMessages-lightTheme {
+    color: black;
+}
+
+.color-commentMessages-darkTheme {
+    color: white;
+}
+
+/* -------------------------------------------------------- */
+
+
+
 /* -------------------- COLORS PALETTE -------------------- */
 .bgColor-headers {
     background-color: #DBE9F4;
@@ -20,17 +106,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #007BFF;
 }
 
-.bgColor-postsContent {
-    background-color: #FFFAF0;
-}
 
-.bgColor-commentsSection {
-    background-color: #FFFFFF;
-}
-
-.bgColor-commentMessages {
-    background-color: rgba(228, 241, 248, 0.6);
-}
 
 
 /* -------------------------------------------------------- */

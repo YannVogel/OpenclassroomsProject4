@@ -48,7 +48,9 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
     <div class="container">
         <div class="row">
             <div class="col text-right">
-                Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong>
+                <span class="colorConnectionMessage-lightTheme">Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></span>
+                <span id="lightThemeOnButton" class="fas fa-sun btn btn-sm btn-info" title="Thème clair" style="color:yellow"></span>
+                <span id="darkThemeOnButton" class="fas fa-moon btn btn-sm btn-dark" title="Thème sombre" style="color:deepskyblue"></span>
                 <?php
                 if ($myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password'])) {
                 ?>
@@ -56,7 +58,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
                 <?php
                 }
                 ?>
-                <a href="logout.php"><span class="fa faButtonRight faButtonLeft fa-sign-out-alt text-danger" title="Se déconnecter"></span></a>
+                <a id="logoutButton" href="logout.php"><span class="fa faButtonRight faButtonLeft fa-sign-out-alt text-danger" title="Se déconnecter"></span></a>
             </div>
         </div>
     </div>
