@@ -1,13 +1,9 @@
 $('#connectionButton').on('click', function() {
     store.setLocal('nickname', $('#nicknameInput').val());
-    store.setLocal('password', $('#passwordInput').val());
 });
 
 
-
-
 $('#nicknameInput').attr("value", store.getLocal("nickname"));
-$('#passwordInput').attr("value", store.getLocal("password"));
 
 
 
@@ -101,22 +97,21 @@ if(store.getSession('activeTab') === '2') {
 }
 
 for(let i=0; i <5; i++) {
-    switch (i) {
-        case 0:
+
+    if($(`.moderationLevel${i}`).length !== 0) {
+        if (i === 0) {
+
             $(`.moderationLevel${i}`).css('color', 'green');
-            break;
-        case 1:
+
+        } else if (i < 3) {
+
             $(`.moderationLevel${i}`).css('color', 'yellow');
-            break;
-        case 2:
-            $(`.moderationLevel${i}`).css('color', 'yellow');
-            break;
-        case 3:
+
+        } else {
+
             $(`.moderationLevel${i}`).css('color', 'orange');
-            break;
-        case 4:
-            $(`.moderationLevel${i}`).css('color', 'orange');
-            break;
+        }
     }
 }
+
 
