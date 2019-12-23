@@ -26,7 +26,7 @@ class AdminCommentController
         $comment = new CommentEntity();
         $comment->setRelatedPostId($postId);
         $comment->setCommentAuthor($user);
-        $comment->setcommentContent(htmlspecialchars($content));
+        $comment->setcommentContent(nl2br(htmlspecialchars($content)));
 
         $manager = new CommentManager();
         $manager->addComment($comment);

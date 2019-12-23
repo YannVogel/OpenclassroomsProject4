@@ -45,7 +45,7 @@ include('view/inscriptionView.php');
 <?php
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isConnectionValid($_SESSION['nickname'], $_SESSION['password'])) {
     ?>
-    <div class="container">
+    <div class="container-lg">
         <div class="row">
             <div class="col text-right">
                 <span class="colorConnectionMessage-lightTheme">Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></span>
