@@ -23,7 +23,7 @@
         }?>
         Le blog de Jean Forteroche</title>
 </head>
-<body>
+<body class="bgColor-body-lightTheme">
 
 <?php
     echo $pageHeader;

@@ -1,11 +1,120 @@
+if(store.getLocal('darkTheme') === 'true')
+{
+    $('body').removeClass('bgColor-body-lightTheme');
+    $('body').addClass('bgColor-body-darkTheme');
+
+    $('.bgColor-postsContent-lightTheme').addClass('bgColor-postsContent-darkTheme');
+    $('.bgColor-postsContent-lightTheme').removeClass('bgColor-postsContent-lightTheme');
+
+    $('.color-briefSection-lightTheme').addClass('color-briefSection-darkTheme');
+    $('.color-briefSection-lightTheme').removeClass('color-briefSection-lightTheme');
+
+    $('.colorHeaders-lightTheme').addClass('colorHeaders-darkTheme');
+    $('.colorHeaders-lightTheme').removeClass('colorHeaders-lightTheme');
+
+    $('.colorConnectionMessage-lightTheme').addClass('colorConnectionMessage-darkTheme');
+    $('.colorConnectionMessage-lightTheme').removeClass('colorConnectionMessage-lightTheme');
+
+    $('.bgColor-commentsSection-lightTheme').addClass('bgColor-commentsSection-darkTheme');
+    $('.bgColor-commentsSection-lightTheme').removeClass('bgColor-commentsSection-lightTheme');
+
+    $('.bgColor-commentMessages-lightTheme').addClass('bgColor-commentMessages-darkTheme');
+    $('.bgColor-commentMessages-lightTheme').removeClass('bgColor-commentMessages-lightTheme');
+
+    $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
+    $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
+}else {
+
+    $('body').removeClass('bgColor-body-darkTheme');
+    $('body').addClass('bgColor-body-lightTheme');
+
+    $('.bgColor-postsContent-darkTheme').addClass('bgColor-postsContent-lightTheme');
+    $('.bgColor-postsContent-darkTheme').removeClass('bgColor-postsContent-darkTheme');
+
+    $('.color-briefSection-darkTheme').addClass('color-briefSection-lightTheme');
+    $('.color-briefSection-darkTheme').removeClass('color-briefSection-darkTheme');
+
+    $('.colorHeaders-darkTheme').addClass('colorHeaders-lightTheme');
+    $('.colorHeaders-darkTheme').removeClass('colorHeaders-darkTheme');
+
+    $('.colorConnectionMessage-darkTheme').addClass('colorConnectionMessage-lightTheme');
+    $('.colorConnectionMessage-darkTheme').removeClass('colorConnectionMessage-darkTheme');
+
+    $('.bgColor-commentsSection-darkTheme').addClass('bgColor-commentsSection-lightTheme');
+    $('.bgColor-commentsSection-darkTheme').removeClass('bgColor-commentsSection-darkTheme');
+
+    $('.bgColor-commentMessages-darkTheme').addClass('bgColor-commentMessages-lightTheme');
+    $('.bgColor-commentMessages-darkTheme').removeClass('bgColor-commentMessages-darkTheme');
+
+    $('.color-commentMessages-darkTheme').addClass('color-commentMessages-lightTheme');
+    $('.color-commentMessages-darkTheme').removeClass('color-commentMessages-darkTheme');
+}
+
 $('#connectionButton').on('click', function() {
     store.setLocal('nickname', $('#nicknameInput').val());
 });
 
+$('#logoutButton').on('click', function() {
+    store.setLocal('darkTheme', 'false');
+})
+
 
 $('#nicknameInput').attr("value", store.getLocal("nickname"));
 
+$('#lightThemeOnButton').on('click', function() {
 
+    store.setLocal('darkTheme', 'false');
+    $('body').removeClass('bgColor-body-darkTheme');
+    $('body').addClass('bgColor-body-lightTheme');
+
+    $('.bgColor-postsContent-darkTheme').addClass('bgColor-postsContent-lightTheme');
+    $('.bgColor-postsContent-darkTheme').removeClass('bgColor-postsContent-darkTheme');
+
+    $('.color-briefSection-darkTheme').addClass('color-briefSection-lightTheme');
+    $('.color-briefSection-darkTheme').removeClass('color-briefSection-darkTheme');
+
+    $('.colorHeaders-darkTheme').addClass('colorHeaders-lightTheme');
+    $('.colorHeaders-darkTheme').removeClass('colorHeaders-darkTheme');
+
+    $('.colorConnectionMessage-darkTheme').addClass('colorConnectionMessage-lightTheme');
+    $('.colorConnectionMessage-darkTheme').removeClass('colorConnectionMessage-darkTheme');
+
+    $('.bgColor-commentsSection-darkTheme').addClass('bgColor-commentsSection-lightTheme');
+    $('.bgColor-commentsSection-darkTheme').removeClass('bgColor-commentsSection-darkTheme');
+
+    $('.bgColor-commentMessages-darkTheme').addClass('bgColor-commentMessages-lightTheme');
+    $('.bgColor-commentMessages-darkTheme').removeClass('bgColor-commentMessages-darkTheme');
+
+    $('.color-commentMessages-darkTheme').addClass('color-commentMessages-lightTheme');
+    $('.color-commentMessages-darkTheme').removeClass('color-commentMessages-darkTheme');
+});
+
+$('#darkThemeOnButton').on('click', function() {
+    store.setLocal('darkTheme', 'true');
+    $('body').removeClass('bgColor-body-lightTheme');
+    $('body').addClass('bgColor-body-darkTheme');
+
+    $('.bgColor-postsContent-lightTheme').addClass('bgColor-postsContent-darkTheme');
+    $('.bgColor-postsContent-lightTheme').removeClass('bgColor-postsContent-lightTheme');
+
+    $('.color-briefSection-lightTheme').addClass('color-briefSection-darkTheme');
+    $('.color-briefSection-lightTheme').removeClass('color-briefSection-lightTheme');
+
+    $('.colorHeaders-lightTheme').addClass('colorHeaders-darkTheme');
+    $('.colorHeaders-lightTheme').removeClass('colorHeaders-lightTheme');
+
+    $('.colorConnectionMessage-lightTheme').addClass('colorConnectionMessage-darkTheme');
+    $('.colorConnectionMessage-lightTheme').removeClass('colorConnectionMessage-lightTheme');
+
+    $('.bgColor-commentsSection-lightTheme').addClass('bgColor-commentsSection-darkTheme');
+    $('.bgColor-commentsSection-lightTheme').removeClass('bgColor-commentsSection-lightTheme');
+
+    $('.bgColor-commentMessages-lightTheme').addClass('bgColor-commentMessages-darkTheme');
+    $('.bgColor-commentMessages-lightTheme').removeClass('bgColor-commentMessages-lightTheme');
+
+    $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
+    $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
+})
 
 
 
@@ -13,11 +122,13 @@ $('#nicknameInput').attr("value", store.getLocal("nickname"));
 $('#adminPanelEnterButton').on('click', function(e) {
     e.preventDefault();
     window.location.href='index.php?adminPage=1';
+    store.setLocal('darkTheme', 'false');
 });
 
 $('#adminPanelQuitButton').on('click', function(e) {
     e.preventDefault();
     window.location.href='index.php';
+    store.setSession('activeTab', '1')
 });
 
 

@@ -11,7 +11,7 @@ $controller = new PostController();
         ?>
     <article>
         <div class="row mt-4 mb-2">
-            <div class="col col-12 text-center">
+            <div class="col col-12 font-headersTitles colorHeaders-lightTheme text-center">
                 <h3 class="h3"><?= $post->getPostTitle(); ?></h3>
             </div>
         </div>
@@ -21,7 +21,7 @@ $controller = new PostController();
         </div>
 
 
-        <div class="row border bgColor-postsContent">
+        <div class="row border font-postsContent bgColor-postsContent-lightTheme">
             <div class="col"><?= $controller->getPostIntro($post->getPostId()); ?></div>
         </div>
     </article>

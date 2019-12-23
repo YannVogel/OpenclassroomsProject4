@@ -5,7 +5,7 @@ use Project\Controller\AdminUserController;
 $myAdmin = new AdminUserController();
 ?>
 
-<section class="container mt-4 mb-4 pb-2 border bgColor-commentsSection">
+<section class="container mt-4 mb-4 pb-2 border bgColor-commentsSection-lightTheme">
     <div class="row">
         <div class="col col-12 text-center font-weight-bold mb-2 bgColor-headers">Espace commentaires :</div>
     </div>
@@ -36,7 +36,7 @@ $hideFirstLine = true;
                 }else
                 {
                 ?>
-                    <span class="text-info">(C'est vous qui avez posté ce commentaire !)</span>
+                    <span class="text-warning">(C'est vous qui avez posté ce commentaire !)</span>
                 <?php
                 }
                 if($myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
@@ -48,7 +48,7 @@ $hideFirstLine = true;
             }
             ?>
             </div>
-        <div class="col col-12 bgColor-commentMessages"><?= $comment->getCommentContent() ?></div>
+        <div class="col col-12 color-commentMessages-lightTheme bgColor-commentMessages-lightTheme"><?= $comment->getCommentContent() ?></div>
 </div>
 
         <?php

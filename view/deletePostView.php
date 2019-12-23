@@ -38,7 +38,7 @@ if(!isset($_GET['postId'])) {
                 <button class="btn btn-info" id="previousButton"><span class="fa faButtonLeft fa-undo"></span>Précédent</button>
             </div>
         </div>
-        <div class="row bgColor-postsContent">
+        <div class="row bgColor-postsContent-lightTheme">
             <div class="col col-12">
                 <div><?= $post->getPostContent() ?></div>
 

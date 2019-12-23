@@ -25,7 +25,7 @@ foreach ($data as $comment) {
 
         </div>
         <div class="row">
-            <div class="col col-12 bgColor-commentMessages">
+            <div class="col col-12 bgColor-commentMessages-lightTheme">
                 <?= $comment->getCommentContent() ?>
             </div>
         </div>
