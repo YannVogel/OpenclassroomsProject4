@@ -3,7 +3,7 @@ use Project\Controller\PostController;
 $controller = new PostController();
 ?>
 
-<section class="container">
+<section class="container-lg">
     <div class="row mt-4 mb-2">
         <div class="col col-12 font-headersTitles colorHeaders-lightTheme text-center">
             <h3 class="h3"><?= $post->getPostTitle(); ?></h3>

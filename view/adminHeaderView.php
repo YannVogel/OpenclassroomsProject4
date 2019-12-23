@@ -11,7 +11,7 @@ $myAdmin = new AdminUserController();
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
 {
 ?>
-    <header class="container bgColor-headers">
+    <header class="container-lg bgColor-headers">
         <div class="row">
             <div class="col text-center">
                 <h1 class="h1 color-siteTitle">Billet simple pour l'Alaska</h1>

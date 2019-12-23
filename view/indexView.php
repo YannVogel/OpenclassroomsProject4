@@ -5,7 +5,7 @@ if($lastPost)
     {
         $controller = new PostController();
 ?>
-<section class="container">
+<section class="container-lg">
     <div class="row mt-4 mb-2">
         <div class="col col-12 font-headersTitles colorHeaders-lightTheme text-center">
             <h3 class="h3"><?= $lastPost->getPostTitle(); ?></h3>
@@ -27,13 +27,13 @@ if($lastPost)
 }
 ?>
 
-<section class="container">
+<section class="container-lg">
     <div class="row mt-4">
         <div class="col col-12 text-center">
             <h3 class="font-headersTitles colorHeaders-lightTheme h3">Le mot de Jean Forteroche</h3>
         </div>
     </div>
-    <div class="myLine"></div>
+    <div class="myLine-lightTheme"></div>
     <div class="row">
         <div class="col col-12 briefSection color-briefSection-lightTheme">
             <img id="jeanForteroche" src="public/images/JeanForteroche.jpg" class="float-left mr-2 img-fluid img-thumbnail" alt="Jean Forteroche prenant la pose"/>

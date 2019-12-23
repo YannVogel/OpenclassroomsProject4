@@ -8,7 +8,7 @@ $myAdmin = new CommentManager();
 $data = $myAdmin->manageComments();
 ?>
 
-<section class="container text-center">
+<section class="container-lg text-center">
 <div class="font-weight-bold">Liste des commentaires, classés par leur niveau de signalement :</div>
 
 
@@ -16,6 +16,7 @@ $data = $myAdmin->manageComments();
 /** @var CommentEntity $comment */
 foreach ($data as $comment) {
         ?>
+    <div class="row">
     <div class="col col-12 border mb-5">
         <div class="row">
             <div class="col col-12 text-center bgColor-headers">
@@ -29,6 +30,7 @@ foreach ($data as $comment) {
                 <?= $comment->getCommentContent() ?>
             </div>
         </div>
+    </div>
     </div>
         <?php
 }

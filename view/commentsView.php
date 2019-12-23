@@ -5,7 +5,7 @@ use Project\Controller\AdminUserController;
 $myAdmin = new AdminUserController();
 ?>
 
-<section class="container mt-4 mb-4 pb-2 border bgColor-commentsSection-lightTheme">
+<section class="container-lg mt-4 mb-4 pb-2 border bgColor-commentsSection-lightTheme">
     <div class="row">
         <div class="col col-12 text-center font-weight-bold mb-2 bgColor-headers">Espace commentaires :</div>
     </div>
@@ -69,7 +69,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
 } else   //Sinon, afficher proposition de se connecter
 {
     ?>
-    <div class="myLine"></div>
+    <div class="myLine-lightTheme"></div>
     <div class="col col-12 text-center">Vous devez vous <a data-toggle="modal" href="#connectionForm">connecter</a> pour publier un commentaire.</div>
     <?php
 }
