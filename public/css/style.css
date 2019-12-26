@@ -151,9 +151,3 @@ header {
     margin: 10px 0 20px;
     width: 30%;
 }
-
-.moderationLevel {
-    color: red;
-    font-weight: bold;
-    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
-}

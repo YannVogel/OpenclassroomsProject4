@@ -205,21 +205,3 @@ if(Storage.getSession('activeTab') === '2') {
 }else {
     ActiveTab.setActive();
 }
-
-for(let i=0; i <5; i++) {
-
-    if($(`.moderationLevel${i}`).length !== 0) {
-        if (i === 0) {
-
-            $(`.moderationLevel${i}`).css('color', 'limegreen');
-
-        } else if (i < 3) {
-
-            $(`.moderationLevel${i}`).css('color', 'yellow');
-
-        } else {
-
-            $(`.moderationLevel${i}`).css('color', 'orange');
-        }
-    }
-}
