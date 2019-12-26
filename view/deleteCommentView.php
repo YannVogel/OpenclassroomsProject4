@@ -20,12 +20,11 @@ foreach ($data as $comment) {
     <div class="col col-12 border mb-5">
         <div class="row">
             <div class="col col-12 text-center bgColor-headers">
-                <!--<strong><?= $comment->getCommentAuthor() ?></strong> le <?= $comment->getCommentDate() ?> | <span class="alert-danger">Niveau de signalement : <span class="moderationLevel moderationLevel<?= $comment->getCommentModeration() ?>"><?= $comment->getCommentModeration() ?></span></span>-->
                 <strong><?= $comment->getCommentAuthor() ?></strong> le <?= $comment->getCommentDate() ?> | <span class="alert-danger">Niveau de signalement : <span
                         <?php
                         if($comment->getCommentModeration() === 0)
                         {
-                            echo "class='badge badge-success rounded-circle'";
+                            echo "class='badge badge-success '";
 
                         }else if($comment->getCommentModeration() < 3)
                         {
