@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div class="modal-body row">
-                    <form class="col" method="post" action="inscription.php">
+                    <form class="col" method="post" action="controller/inscription.php">
                         <div class="form-group">
                             <label for="nicknameInscriptionInput" class="form-control-label">Pseudo désiré</label>
                             <div class="input-group">
