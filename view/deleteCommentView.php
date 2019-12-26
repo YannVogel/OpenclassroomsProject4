@@ -24,7 +24,7 @@ foreach ($data as $comment) {
                         <?php
                         if($comment->getCommentModeration() === 0)
                         {
-                            echo "class='badge badge-success '";
+                            echo "class='badge badge-success rounded-circle'";
 
                         }else if($comment->getCommentModeration() < 3)
                         {
