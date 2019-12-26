@@ -64,5 +64,3 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
 include('view/alertsView.php');
 include('view/connectionView.php');
 include('view/inscriptionView.php');
-?>
-

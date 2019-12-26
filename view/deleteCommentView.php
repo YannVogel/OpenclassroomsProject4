@@ -35,5 +35,4 @@ foreach ($data as $comment) {
         <?php
 }
 ?>
-
 </section>

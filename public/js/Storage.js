@@ -1,4 +1,4 @@
-const store = {
+const Storage = {
     setLocal(index, value) {
         localStorage.setItem(index, value);
     },

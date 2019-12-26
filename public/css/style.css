@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Brush Script MT", 'Arial Black', Arial, Verdana, sans-serif;
 }
 
-/* -------------------- THEME CHANGES -------------------- */
+/* -------------------- THEMES CHANGES -------------------- */
 .bgColor-body-lightTheme {
     background-color: #FAFCFD ;
 }
@@ -104,11 +104,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.8;
     margin: 20px 0;
 }
-
 /* -------------------------------------------------------- */
-
-
-
 /* -------------------- COLORS PALETTE -------------------- */
 .bgColor-headers {
     background-color: #DBE9F4;
@@ -117,10 +113,6 @@ h1, h2, h3, h4, h5, h6 {
 .color-siteTitle {
     color: #007BFF;
 }
-
-
-
-
 /* -------------------------------------------------------- */
 
 img#jeanForteroche {
@@ -152,8 +144,6 @@ img#jeanForteroche {
 header {
     border: 1px black solid;
 }
-
-
 
 .myCommentLine {
     border: 1px black solid;
