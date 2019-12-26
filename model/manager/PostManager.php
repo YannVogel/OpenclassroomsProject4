@@ -28,10 +28,10 @@ class PostManager extends Manager
 
     /**
      * @param int $postId
-     * @return mixed
+     * @return PostEntity
      * Return the post matching $postId.
      */
-    public function getPost(int $postId)
+    public function getPost(int $postId) : PostEntity
     {
         $db = $this->databaseConnect();
 
@@ -44,10 +44,10 @@ class PostManager extends Manager
     }
 
     /**
-     * @return mixed
+     * @return PostEntity
      * Return the last post of the database (based on the post_id).
      */
-    public function getLastPost()
+    public function getLastPost() : PostEntity
     {
         $db = $this->databaseConnect();
 
