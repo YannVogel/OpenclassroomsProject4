@@ -20,7 +20,26 @@ foreach ($data as $comment) {
     <div class="col col-12 border mb-5">
         <div class="row">
             <div class="col col-12 text-center bgColor-headers">
-                <strong><?= $comment->getCommentAuthor() ?></strong> le <?= $comment->getCommentDate() ?> | <span class="alert-danger">Niveau de signalement : <span class="moderationLevel moderationLevel<?= $comment->getCommentModeration() ?>"><?= $comment->getCommentModeration() ?></span></span>
+                <strong><?= $comment->getCommentAuthor() ?></strong> le <?= $comment->getCommentDate() ?> | <span class="alert-danger">Niveau de signalement : <span
+                        <?php
+                        if($comment->getCommentModeration() === 0)
+                        {
+                            echo "class='badge badge-success rounded-circle'";
+
+                        }else if($comment->getCommentModeration() < 3)
+                        {
+                            echo "class='badge badge-primary rounded-circle'";
+
+                        }else if($comment->getCommentModeration() < 5)
+                        {
+                            echo "class='badge badge-warning rounded-circle'";
+
+                        }else
+                        {
+                            echo "class='badge badge-danger rounded-circle'";
+                        }
+
+                        ?>><?= $comment->getCommentModeration() ?></span></span>
                 <a class="btn btn-danger btn-sm float-right" href="index.php?adminPage=1&deleteCommentId=<?= $comment->getCommentId() ?>"><span class="fa faButtonLeft fa-trash-alt"></span>SUPPRRIMER</a>
             </div>
 
@@ -35,5 +54,4 @@ foreach ($data as $comment) {
         <?php
 }
 ?>
-
 </section>

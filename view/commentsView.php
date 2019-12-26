@@ -13,7 +13,7 @@ $myAdmin = new AdminUserController();
 
 if($comments) {
 $hideFirstLine = true;
-//Afficher commentaires
+
     /** @var CommentEntity $comment */
     foreach ($comments as $comment) {
         if(!$hideFirstLine)
@@ -61,12 +61,12 @@ $hideFirstLine = true;
     <?php
 }
 
-//Si l'utilisateur est connecté, afficher module de post de commentaires
+//If the user is logged in, displays the module for writing comments
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
 
     include('addCommentView.php');
 
-} else   //Sinon, afficher proposition de se connecter
+} else   //Otherwise, displays a message suggesting to connect
 {
     ?>
     <div class="myLine-lightTheme"></div>

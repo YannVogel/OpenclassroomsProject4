@@ -4,7 +4,7 @@ use Project\Controller\AdminPostController;
 
 $myAdmin = new AdminUserController();
 
-
+//This page only displays if the user is logged in AS AN ADMIN
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->isUserAnAdmin($_SESSION['nickname'], $_SESSION['password']))
 {
 ?>
@@ -16,28 +16,28 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
     </nav>
     <div class="tab-content">
         <div class="tab-pane" id="p1">
-            <!-- Ici se trouve le code pour ajouter un nouveau billet -->
+            <!-- Administration panel tab to create a new post -->
             <?php require('./view/addPostView.php') ?>
     </div>
 
     <div class="tab-pane" id="p2">
-        <!-- Ici se trouve le code pour modifier un billet existant -->
+        <!-- Administration panel tab to edit a post -->
         <?php require('./view/editPostView.php') ?>
     </div>
 
     <div class="tab-pane" id="p3">
-        <!-- Ici se trouve le code pour supprimer un billet -->
+        <!-- Administration panel tab to delete a post -->
         <?php require('./view/deletePostView.php') ?>
     </div>
     <div class="tab-pane" id="p4">
-        <!-- Ici se trouve le code pour supprimer un commentaire -->
+        <!-- Administration panel tab to delete an user's comment -->
         <?php require('./view/deleteCommentView.php') ?>
     </div>
     </div>
 <?php
 
 }else {
-
+//If the user is not logged in, or not logged in as an admin, redirects to index.php
 header('Location: index.php');
 }
 ?>

@@ -76,9 +76,6 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
         }
     }
 
-
-
-
     if (isset($_POST['newComment']) && trim($_POST['newComment']) !== "") {
         $adminController = new AdminCommentController();
         $adminController->valideAddComment($_GET['displayPost'], $_SESSION['nickname'], $_POST['newComment']);
@@ -126,4 +123,3 @@ if(isset($_GET['displayPost']) AND trim($_GET['displayPost']) !== "" AND $contro
 }
 
 include('view/templateView.php');
-

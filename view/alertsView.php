@@ -14,8 +14,6 @@ if (isset($_GET['newUserSuccessMessage']) AND $_GET['newUserSuccessMessage'] ===
     <?php
 }
 
-
-
 if(isset($_GET['newUserFailureMessage']))
 {
     ?>
@@ -36,7 +34,6 @@ if(isset($_GET['newUserFailureMessage']))
     <?php
 }
 
-
 if (isset($_GET['newPostSuccessMessage']) AND $_GET['newPostSuccessMessage'] === '1')
 {
     ?>
@@ -49,8 +46,6 @@ if (isset($_GET['newPostSuccessMessage']) AND $_GET['newPostSuccessMessage'] ===
     </div>
     <?php
 }
-
-
 
 if(isset($_GET['newPostFailureMessage']) AND $_GET['newPostFailureMessage'] === '1')
 {
@@ -103,8 +98,6 @@ if (isset($_GET['deletePostSuccessMessage']) AND $_GET['deletePostSuccessMessage
     </div>
     <?php
 }
-
-
 
 if(isset($_GET['deletePostFailureMessage']) AND $_GET['deletePostFailureMessage'] === '1')
 {
