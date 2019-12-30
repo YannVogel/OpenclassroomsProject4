@@ -61,7 +61,7 @@ class AdminUserController
 
     /**
      * @param string $nickname
-     * @return int
+     * @return bool
      * Return true if a nickname matching $nickname exists, otherwise return false.
      */
     public function isNicknameAvailable(string $nickname){
@@ -80,7 +80,7 @@ class AdminUserController
     /**
      * @param string $password
      * @param string $confirmationPassword
-     * @return int
+     * @return bool
      * Return true if a password matches its confirmation, otherwise return false.
      */
     public function doPasswordsMatch(string $password, string $confirmationPassword) {
@@ -93,7 +93,7 @@ class AdminUserController
     /**
      * @param string $nickname
      * @param string $password
-     * @return int
+     * @return bool
      * Return true if the connection is valid, otherwise return false.
      * The connection is valid only if $nickname and $password match the nickname and password of a registered user.
      */
@@ -113,7 +113,7 @@ class AdminUserController
     /**
      * @param string $nickname
      * @param string $password
-     * @return mixed
+     * @return bool
      * First, verify if the connection is valid (nickname & password must match).
      * Return true if the user matching $nickname is an admin, otherwise return false.
      * The user is an admin only if his user_admin_rights are set to '1'.

@@ -88,7 +88,7 @@ class PostController
 
     /**
      * @param $postId
-     * @return mixed
+     * @return int
      * Return the comments number of the post matching $postId.
      */
     public function getNumberOfComments($postId)

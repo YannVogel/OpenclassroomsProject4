@@ -2,6 +2,7 @@
 
 namespace Project\Model\Manager;
 
+use PhpParser\Comment;
 use Project\Model\Entity\CommentEntity;
 use Project\Model\Manager\Manager;
 
@@ -30,7 +31,7 @@ class CommentManager extends Manager
 
     /**
      * @param int $postId
-     * @return array
+     * @return CommentEntity[]
      * Return the comments of the post matching $postId.
      */
     public function getComments(int $postId)
@@ -83,7 +84,7 @@ class CommentManager extends Manager
     }
 
     /**
-     * @return array
+     * @return CommentEntity[]
      * Return comments sorted by comment_moderation DESC.
      */
     public function manageComments()

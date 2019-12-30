@@ -13,7 +13,7 @@ use Project\Model\Manager\Manager;
 class PostManager extends Manager
 {
     /**
-     * @return array
+     * @return PostEntity[]
      * Return all the posts in the database.
      */
     public function getPosts()
@@ -99,7 +99,7 @@ class PostManager extends Manager
 
     /**
      * @param $postId
-     * @return mixed
+     * @return int
      * Return the number of comments of the post matching $postId.
      */
     public function numberOfComments($postId)
