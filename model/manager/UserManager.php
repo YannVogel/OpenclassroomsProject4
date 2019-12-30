@@ -13,7 +13,7 @@ use Project\Model\Manager\Manager;
 class UserManager extends Manager
 {
     /**
-     * @return array
+     * @return UserEntity[]
      * Return all the users in the database.
      */
     public function getUsers()
@@ -28,7 +28,7 @@ class UserManager extends Manager
 
     /**
      * @param $nickname
-     * @return mixed
+     * @return array
      * Return the user matching $nickname.
      */
     public function getUser($nickname)
@@ -43,7 +43,7 @@ class UserManager extends Manager
 
     /**
      * @param UserEntity $user
-     * Add a user to the database.
+     * Add an user to the database.
      */
     public function addUser(UserEntity $user)
     {

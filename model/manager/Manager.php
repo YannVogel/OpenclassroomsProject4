@@ -2,6 +2,8 @@
 
 namespace Project\Model\Manager;
 
+use PDO;
+
 /**
  * Class Manager
  * @package Project\Model\Manager
@@ -40,17 +42,17 @@ abstract class Manager
     private const PASSWORD = '';
 
     /**
-     * @return \PDO
+     * @return PDO
      * Connect to the database.
      * If already connected, return the database informations.
      */
-    protected function databaseConnect() : \PDO
+    protected function databaseConnect() : PDO
     {
         if(self::$database === null) {
 
             try {
 
-                self::$database = new \PDO(self::DRIVER.':host='.self::SERVER.';dbname='.self::DBNAME.';charset=utf8', self::USERNAME, self::PASSWORD);
+                self::$database = new PDO(self::DRIVER.':host='.self::SERVER.';dbname='.self::DBNAME.';charset=utf8', self::USERNAME, self::PASSWORD);
 
             } catch (\Exception $e) {
 

@@ -16,8 +16,7 @@ class AdminPostController
      * @return false|string
      * Return the admin panel header.
      */
-    public function getAdminPageHeader()
-    {
+    public function getAdminPageHeader() {
         ob_start();
 
         include('view/adminHeaderView.php');
