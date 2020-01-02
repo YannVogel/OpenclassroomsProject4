@@ -12,8 +12,8 @@ if($lastPost)
         </div>
     </div>
         <div class="row font-weight-bold bgColor-headers">
-            <span class="col col-8">publié le <?= $lastPost->getPostDate(); ?></span>
-            <span class="col col-4 text-right">Nombre de commentaire<?php if($controller->getNumberOfComments($lastPost->getPostId()) > 1){echo 's';} ?> : <?= $controller->getNumberOfComments($lastPost->getPostId()) ?></span>
+            <span class="col col-sm-6 col-xl-8">publié le <?= $lastPost->getPostDate(); ?></span>
+            <span class="col col-sm-6 col-xl-4 text-right pr-2"><?= $controller->getNumberOfComments($lastPost->getPostId()) ?> commentaire<?php if($controller->getNumberOfComments($lastPost->getPostId()) > 1){echo 's';} ?></span>
         </div>
 
 
