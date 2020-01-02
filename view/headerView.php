@@ -45,7 +45,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
     <div class="container-lg">
         <div class="row">
             <div class="col text-right">
-                <span class="colorConnectionMessage-lightTheme">Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></span>
+                <span class="color-connectionMessage-lightTheme">Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong></span>
                 <span id="lightThemeOnButton" class="fas fa-sun btn btn-sm btn-info" title="Thème clair" style="color:yellow"></span>
                 <span id="darkThemeOnButton" class="fas fa-moon btn btn-sm btn-dark" title="Thème sombre" style="color:deepskyblue"></span>
                 <?php

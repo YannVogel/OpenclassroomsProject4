@@ -26,6 +26,42 @@ $(window).on('load',function() {
 });
 /* ------------------------------------------------------------------------------------------------ */
 /* ---------------------------------------- THEMES CHANGES ---------------------------------------- */
+$('#darkThemeOnButton').on('click', function() {
+    Storage.setLocal('darkTheme', 'true');
+    $('body').removeClass('bgColor-body-lightTheme');
+    $('body').addClass('bgColor-body-darkTheme');
+
+    $('.bgColor-postsContent-lightTheme').addClass('bgColor-postsContent-darkTheme');
+    $('.bgColor-postsContent-lightTheme').removeClass('bgColor-postsContent-lightTheme');
+
+    $('.color-briefSection-lightTheme').addClass('color-briefSection-darkTheme');
+    $('.color-briefSection-lightTheme').removeClass('color-briefSection-lightTheme');
+
+    $('.color-headers-lightTheme').addClass('color-headers-darkTheme');
+    $('.color-headers-lightTheme').removeClass('color-headers-lightTheme');
+
+    $('.color-connectionMessage-lightTheme').addClass('color-connectionMessage-darkTheme');
+    $('.color-connectionMessage-lightTheme').removeClass('color-connectionMessage-lightTheme');
+
+    $('.bgColor-commentsSection-lightTheme').addClass('bgColor-commentsSection-darkTheme');
+    $('.bgColor-commentsSection-lightTheme').removeClass('bgColor-commentsSection-lightTheme');
+
+    $('.bgColor-commentMessages-lightTheme').addClass('bgColor-commentMessages-darkTheme');
+    $('.bgColor-commentMessages-lightTheme').removeClass('bgColor-commentMessages-lightTheme');
+
+    $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
+    $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
+
+    $('.myLine-lightTheme').addClass('myLine-darkTheme');
+    $('.myLine-lightTheme').removeClass('myLine-lightTheme');
+
+    $('.myCommentLine-lightTheme').addClass('myCommentLine-darkTheme');
+    $('.myCommentLine-lightTheme').removeClass('myCommentLine-lightTheme');
+
+    $('.color-commentAuthor-lightTheme').addClass('color-commentAuthor-darkTheme');
+    $('.color-commentAuthor-lightTheme').removeClass('color-commentAuthor-lightTheme');
+});
+
 $('#lightThemeOnButton').on('click', function() {
 
     Storage.setLocal('darkTheme', 'false');
@@ -38,11 +74,11 @@ $('#lightThemeOnButton').on('click', function() {
     $('.color-briefSection-darkTheme').addClass('color-briefSection-lightTheme');
     $('.color-briefSection-darkTheme').removeClass('color-briefSection-darkTheme');
 
-    $('.colorHeaders-darkTheme').addClass('colorHeaders-lightTheme');
-    $('.colorHeaders-darkTheme').removeClass('colorHeaders-darkTheme');
+    $('.color-headers-darkTheme').addClass('color-headers-lightTheme');
+    $('.color-headers-darkTheme').removeClass('color-headers-darkTheme');
 
-    $('.colorConnectionMessage-darkTheme').addClass('colorConnectionMessage-lightTheme');
-    $('.colorConnectionMessage-darkTheme').removeClass('colorConnectionMessage-darkTheme');
+    $('.color-connectionMessage-darkTheme').addClass('color-connectionMessage-lightTheme');
+    $('.color-connectionMessage-darkTheme').removeClass('color-connectionMessage-darkTheme');
 
     $('.bgColor-commentsSection-darkTheme').addClass('bgColor-commentsSection-lightTheme');
     $('.bgColor-commentsSection-darkTheme').removeClass('bgColor-commentsSection-darkTheme');
@@ -55,38 +91,13 @@ $('#lightThemeOnButton').on('click', function() {
 
     $('.myLine-darkTheme').addClass('myLine-lightTheme');
     $('.myLine-darkTheme').removeClass('myLine-darkTheme');
+
+    $('.myCommentLine-darkTheme').addClass('myCommentLine-lightTheme');
+    $('.myCommentLine-darkTheme').removeClass('myCommentLine-darkTheme');
+
+    $('.color-commentAuthor-darkTheme').addClass('color-commentAuthor-lightTheme');
+    $('.color-commentAuthor-darkTheme').removeClass('color-commentAuthor-darkTheme');
 });
-
-$('#darkThemeOnButton').on('click', function() {
-    Storage.setLocal('darkTheme', 'true');
-    $('body').removeClass('bgColor-body-lightTheme');
-    $('body').addClass('bgColor-body-darkTheme');
-
-    $('.bgColor-postsContent-lightTheme').addClass('bgColor-postsContent-darkTheme');
-    $('.bgColor-postsContent-lightTheme').removeClass('bgColor-postsContent-lightTheme');
-
-    $('.color-briefSection-lightTheme').addClass('color-briefSection-darkTheme');
-    $('.color-briefSection-lightTheme').removeClass('color-briefSection-lightTheme');
-
-    $('.colorHeaders-lightTheme').addClass('colorHeaders-darkTheme');
-    $('.colorHeaders-lightTheme').removeClass('colorHeaders-lightTheme');
-
-    $('.colorConnectionMessage-lightTheme').addClass('colorConnectionMessage-darkTheme');
-    $('.colorConnectionMessage-lightTheme').removeClass('colorConnectionMessage-lightTheme');
-
-    $('.bgColor-commentsSection-lightTheme').addClass('bgColor-commentsSection-darkTheme');
-    $('.bgColor-commentsSection-lightTheme').removeClass('bgColor-commentsSection-lightTheme');
-
-    $('.bgColor-commentMessages-lightTheme').addClass('bgColor-commentMessages-darkTheme');
-    $('.bgColor-commentMessages-lightTheme').removeClass('bgColor-commentMessages-lightTheme');
-
-    $('.color-commentMessages-lightTheme').addClass('color-commentMessages-darkTheme');
-    $('.color-commentMessages-lightTheme').removeClass('color-commentMessages-lightTheme');
-
-    $('.myLine-lightTheme').addClass('myLine-darkTheme');
-    $('.myLine-lightTheme').removeClass('myLine-lightTheme');
-});
-
 
 if(Storage.getLocal('darkTheme') === 'true')
 {
@@ -99,11 +110,11 @@ if(Storage.getLocal('darkTheme') === 'true')
     $('.color-briefSection-lightTheme').addClass('color-briefSection-darkTheme');
     $('.color-briefSection-lightTheme').removeClass('color-briefSection-lightTheme');
 
-    $('.colorHeaders-lightTheme').addClass('colorHeaders-darkTheme');
-    $('.colorHeaders-lightTheme').removeClass('colorHeaders-lightTheme');
+    $('.color-headers-lightTheme').addClass('color-headers-darkTheme');
+    $('.color-headers-lightTheme').removeClass('color-headers-lightTheme');
 
-    $('.colorConnectionMessage-lightTheme').addClass('colorConnectionMessage-darkTheme');
-    $('.colorConnectionMessage-lightTheme').removeClass('colorConnectionMessage-lightTheme');
+    $('.color-connectionMessage-lightTheme').addClass('color-connectionMessage-darkTheme');
+    $('.color-connectionMessage-lightTheme').removeClass('color-connectionMessage-lightTheme');
 
     $('.bgColor-commentsSection-lightTheme').addClass('bgColor-commentsSection-darkTheme');
     $('.bgColor-commentsSection-lightTheme').removeClass('bgColor-commentsSection-lightTheme');
@@ -116,6 +127,12 @@ if(Storage.getLocal('darkTheme') === 'true')
 
     $('.myLine-lightTheme').addClass('myLine-darkTheme');
     $('.myLine-lightTheme').removeClass('myLine-lightTheme');
+
+    $('.myCommentLine-lightTheme').addClass('myCommentLine-darkTheme');
+    $('.myCommentLine-lightTheme').removeClass('myCommentLine-lightTheme');
+
+    $('.color-commentAuthor-lightTheme').addClass('color-commentAuthor-darkTheme');
+    $('.color-commentAuthor-lightTheme').removeClass('color-commentAuthor-lightTheme');
 }else {
 
     $('body').removeClass('bgColor-body-darkTheme');
@@ -127,11 +144,11 @@ if(Storage.getLocal('darkTheme') === 'true')
     $('.color-briefSection-darkTheme').addClass('color-briefSection-lightTheme');
     $('.color-briefSection-darkTheme').removeClass('color-briefSection-darkTheme');
 
-    $('.colorHeaders-darkTheme').addClass('colorHeaders-lightTheme');
-    $('.colorHeaders-darkTheme').removeClass('colorHeaders-darkTheme');
+    $('.color-headers-darkTheme').addClass('color-headers-lightTheme');
+    $('.color-headers-darkTheme').removeClass('color-headers-darkTheme');
 
-    $('.colorConnectionMessage-darkTheme').addClass('colorConnectionMessage-lightTheme');
-    $('.colorConnectionMessage-darkTheme').removeClass('colorConnectionMessage-darkTheme');
+    $('.color-connectionMessage-darkTheme').addClass('color-connectionMessage-lightTheme');
+    $('.color-connectionMessage-darkTheme').removeClass('color-connectionMessage-darkTheme');
 
     $('.bgColor-commentsSection-darkTheme').addClass('bgColor-commentsSection-lightTheme');
     $('.bgColor-commentsSection-darkTheme').removeClass('bgColor-commentsSection-darkTheme');
@@ -144,6 +161,12 @@ if(Storage.getLocal('darkTheme') === 'true')
 
     $('.myLine-darkTheme').addClass('myLine-lightTheme');
     $('.myLine-darkTheme').removeClass('myLine-darkTheme');
+
+    $('.myCommentLine-darkTheme').addClass('myCommentLine-lightTheme');
+    $('.myCommentLine-darkTheme').removeClass('myCommentLine-darkTheme');
+
+    $('.color-commentAuthor-darkTheme').addClass('color-commentAuthor-lightTheme');
+    $('.color-commentAuthor-darkTheme').removeClass('color-commentAuthor-darkTheme');
 }
 
 $('#logoutButton').on('click', function() {
