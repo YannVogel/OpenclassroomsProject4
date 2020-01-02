@@ -8,7 +8,7 @@ use Project\Model\Manager\PostManager;
 /**
  * Class PostController
  * @package Project\Controller
- * Control the operations affecting the posts.
+ * Controls the operations affecting the posts.
  */
 class PostController
 {

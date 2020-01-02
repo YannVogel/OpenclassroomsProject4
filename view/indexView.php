@@ -7,13 +7,13 @@ if($lastPost)
 ?>
 <section class="container-lg">
     <div class="row mt-4 mb-2">
-        <div class="col col-12 font-headersTitles colorHeaders-lightTheme text-center">
+        <div class="col col-12 font-headersTitles color-headers-lightTheme text-center">
             <h3 class="h3"><?= $lastPost->getPostTitle(); ?></h3>
         </div>
     </div>
         <div class="row font-weight-bold bgColor-headers">
-            <span class="col col-8">publié le <?= $lastPost->getPostDate(); ?></span>
-            <span class="col col-4 text-right">Nombre de commentaire<?php if($controller->getNumberOfComments($lastPost->getPostId()) > 1){echo 's';} ?> : <?= $controller->getNumberOfComments($lastPost->getPostId()) ?></span>
+            <span class="col col-sm-6 col-xl-8">publié le <?= $lastPost->getPostDate(); ?></span>
+            <span class="col col-sm-6 col-xl-4 text-right pr-2"><?= $controller->getNumberOfComments($lastPost->getPostId()) ?> commentaire<?php if($controller->getNumberOfComments($lastPost->getPostId()) > 1){echo 's';} ?></span>
         </div>
 
 
@@ -30,7 +30,7 @@ if($lastPost)
 <section class="container-lg">
     <div class="row mt-4">
         <div class="col col-12 text-center">
-            <h3 class="font-headersTitles colorHeaders-lightTheme h3">Le mot de Jean Forteroche</h3>
+            <h3 class="font-headersTitles color-headers-lightTheme h3">Le mot de Jean Forteroche</h3>
         </div>
     </div>
     <div class="myLine-lightTheme"></div>

@@ -5,7 +5,7 @@ namespace Project\Model\Entity;
 /**
  * Class PostEntity
  * @package Project\Model\Entity
- * Manage posts in database as PHP objects.
+ * Manages posts in database as PHP objects.
  */
 class PostEntity
 {

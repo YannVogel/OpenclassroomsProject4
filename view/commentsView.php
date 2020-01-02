@@ -19,12 +19,12 @@ $hideFirstLine = true;
         if(!$hideFirstLine)
 {
     ?>
-    <div class="myCommentLine"></div>
+    <div class="myCommentLine-lightTheme"></div>
     <?php
 }?>
 
 <div class="col col-12">
-        <div class="col col-12 text-center"><strong><?= $comment->getCommentAuthor() ?></strong> a posté un commentaire
+        <div class="col col-12 text-center color-commentAuthor-lightTheme"><strong><?= $comment->getCommentAuthor() ?></strong> a posté un commentaire
             le <?= $comment->getCommentDate() ?>
             <?php
             if(isset($_SESSION['nickname']) AND isset($_SESSION['password'])) {
@@ -57,7 +57,7 @@ $hideFirstLine = true;
 }else
 {
     ?>
-    <div class="col col-12 text-center">Soyez le premier à poster un commentaire !</div>
+    <div class="col col-12 text-center color-commentAuthor-lightTheme">Soyez le premier à poster un commentaire !</div>
     <?php
 }
 

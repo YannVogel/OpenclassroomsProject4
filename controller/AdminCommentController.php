@@ -10,7 +10,7 @@ use Project\Model\Manager\CommentManager;
 /**
  * Class AdminCommentController
  * @package Project\Controller
- * Control the admin operations affecting the comments.
+ * Controls the admin operations affecting the comments.
  */
 class AdminCommentController
 {

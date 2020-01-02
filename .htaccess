@@ -3,6 +3,3 @@ Deny from all
 <FilesMatch ^(index\.php)?$>
   Allow from all
 </FilesMatch>
-<FilesMatch ^(logout\.php)?$>
-  Allow from all
-</FilesMatch>

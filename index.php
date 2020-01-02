@@ -9,27 +9,31 @@ use Project\Controller\CommentController;
 use Project\Controller\AdminPostController;
 use Project\Controller\AdminCommentController;
 use Project\Controller\AdminUserController;
+use Project\Controller\AuthController;
 
+$authController = new AuthController();
 $controller = new PostController();
 $adminUserController = new AdminUserController();
 
+if(isset($_GET['newInscription']) AND $_GET['newInscription'] === '1')
+{
+    $newNickname = $_POST['nicknameInscriptionInput'];
+    $newPassword = $_POST['passwordInscriptionInput'];
+    $newPasswordConfirm = $_POST['passwordInscriptionConfirmationInput'];
+
+    $authController->newUserInscription($newNickname, $newPassword, $newPasswordConfirm);
+}
+
 if(isset($_POST['nicknameInput']) AND trim($_POST['nicknameInput']) !== '' AND isset($_POST['passwordInput']) AND trim($_POST['passwordInput']) !== '' AND isset($_GET['newConnection']) AND $_GET['newConnection'] === '1')
 {
-    if($adminUserController->isConnectionValid($_POST['nicknameInput'], $_POST['passwordInput']))
-    {
-        $nickname = htmlspecialchars($_POST['nicknameInput']);
-        $password = $_POST['passwordInput'];
-        $_SESSION['nickname'] = $nickname;
-        $_SESSION['password'] = $password;
-
-        header('Location: index.php?connectionSuccessMessage=1');
-
-    }else{
-
-        header('Location: index.php?connectionFailureMessage=1');
-    }
-
+    $authController->userConnection($_POST['nicknameInput'], $_POST['passwordInput']);
 }
+
+if(isset($_GET['logout']) AND $_GET['logout'] === '1')
+{
+    $authController->userLogout();
+}
+
 
 if(isset($_SESSION['nickname']) AND isset($_SESSION['password']))
 {

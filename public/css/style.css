@@ -53,19 +53,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #E3E3E3;
 }
 
-.colorHeaders-lightTheme {
+.color-headers-lightTheme {
     color: black;
 }
 
-.colorHeaders-darkTheme {
+.color-headers-darkTheme {
     color: #E3E3E3;
 }
 
-.colorConnectionMessage-lightTheme {
+.color-connectionMessage-lightTheme {
     color: black;
 }
 
-.colorConnectionMessage-darkTheme {
+.color-connectionMessage-darkTheme {
     color: #E3E3E3;
 }
 
@@ -83,6 +83,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .bgColor-commentMessages-darkTheme {
     background-color: rgba(169, 183, 196, 0.5);
+}
+
+.color-commentAuthor-lightTheme {
+    color: black;
+}
+
+.color-commentAuthor-darkTheme {
+    color: antiquewhite;
 }
 
 .color-commentMessages-lightTheme {
@@ -103,6 +111,20 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px white solid;
     opacity: 0.8;
     margin: 20px 0;
+}
+
+.myCommentLine-lightTheme {
+    border: 1px black solid;
+    opacity: 0.2;
+    margin: 10px 0 20px;
+    width: 30%;
+}
+
+.myCommentLine-darkTheme {
+    border: 1px white solid;
+    opacity: 0.8;
+    margin: 10px 0 20px;
+    width: 30%;
 }
 /* -------------------------------------------------------- */
 /* -------------------- COLORS PALETTE -------------------- */
@@ -143,11 +165,4 @@ img#jeanForteroche {
 
 header {
     border: 1px black solid;
-}
-
-.myCommentLine {
-    border: 1px black solid;
-    opacity: 0.2;
-    margin: 10px 0 20px;
-    width: 30%;
 }
