@@ -8,7 +8,7 @@ use Project\Model\Manager\Manager;
 /**
  * Class UserManager
  * @package Project\Model\Manager
- * Manage users in database.
+ * Manages users in database.
  */
 class UserManager extends Manager
 {

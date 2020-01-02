@@ -4,7 +4,7 @@ namespace Project\Model\Entity;
 /**
  * Class CommentEntity
  * @package Project\Model\Entity
- * Manage comments in database as PHP objects.
+ * Manages comments in database as PHP objects.
  */
 class CommentEntity
 {

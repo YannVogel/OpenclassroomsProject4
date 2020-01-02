@@ -21,7 +21,7 @@ if(isset($_SESSION['nickname']) AND isset($_SESSION['password']) AND $myAdmin->i
         </div>
         <div class="row">
             <div class="col text-center">
-            <div>Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong><a href="logout.php"><span class="fa faButtonRight fa-sign-out-alt text-danger" title="Se déconnecter"></span></a></div>
+            <div>Vous êtes connecté·e en tant que <strong><?= $_SESSION['nickname'] ?></strong><a href="index.php?logout=1"><span class="fa faButtonRight fa-sign-out-alt text-danger" title="Se déconnecter"></span></a></div>
             <button id="adminPanelQuitButton" class="btn btn-success btn-sm">Page d'accueil<span
                         class="fa faButtonRight fa-home"></span></button>
             </div>

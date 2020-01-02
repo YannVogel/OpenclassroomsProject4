@@ -7,7 +7,7 @@ use PDO;
 /**
  * Class Manager
  * @package Project\Model\Manager
- * Manage the database connection.
+ * Manages the database connection.
  */
 abstract class Manager
 {

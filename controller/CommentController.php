@@ -8,7 +8,7 @@ use Project\Model\Manager\CommentManager;
 /**
  * Class CommentController
  * @package Project\Controller
- * Control the operations affecting the comments.
+ * Controls the operations affecting the comments.
  */
 class CommentController
 {

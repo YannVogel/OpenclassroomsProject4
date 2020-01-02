@@ -4,7 +4,7 @@ namespace Project\Model\Entity;
 /**
  * Class UserEntity
  * @package Project\Model\Entity
- * Manage users in database as PHP objects.
+ * Manages users in database as PHP objects.
  */
 class UserEntity
 {

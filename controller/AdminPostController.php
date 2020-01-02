@@ -7,7 +7,7 @@ use Project\Model\Manager\PostManager;
 /**
  * Class AdminPostController
  * @package Project\Controller
- * Control the admin operations affecting the posts.
+ * Controls the admin operations affecting the posts.
  */
 class AdminPostController
 {

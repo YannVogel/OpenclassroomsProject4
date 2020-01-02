@@ -9,7 +9,7 @@ use Project\Model\Manager\Manager;
 /**
  * Class CommentManager
  * @package Project\Model\Manager
- * Manage comments in database.
+ * Manages comments in database.
  */
 class CommentManager extends Manager
 {

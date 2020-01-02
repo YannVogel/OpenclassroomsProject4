@@ -8,7 +8,7 @@ use Project\Model\Manager\Manager;
 /**
  * Class PostManager
  * @package Project\Model\Manager
- * Manage posts in database.
+ * Manages posts in database.
  */
 class PostManager extends Manager
 {

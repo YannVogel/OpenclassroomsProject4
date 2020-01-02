@@ -7,7 +7,7 @@ use Project\Model\Manager\UserManager;
 /**
  * Class AdminUserController
  * @package Project\Controller
- * Control the admin operations affecting the users.
+ * Controls the admin operations affecting the users.
  */
 class AdminUserController
 {
@@ -42,7 +42,7 @@ class AdminUserController
         $myAdmin = new UserManager();
         $myAdmin->addUser($user);
 
-        header('Location: ../index.php?newUserSuccessMessage=1');
+        header('Location: ./index.php?newUserSuccessMessage=1');
     }
 
     /**
@@ -56,7 +56,7 @@ class AdminUserController
      */
     public function failureAddUser(int $errorNumber)
     {
-        header('Location: ../index.php?newUserFailureMessage=' . $errorNumber);
+        header('Location: ./index.php?newUserFailureMessage=' . $errorNumber);
     }
 
     /**
