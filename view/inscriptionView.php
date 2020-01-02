@@ -18,6 +18,7 @@
                                 </div>
                             <input type="text" class="form-control" name ="nicknameInscriptionInput" id="nicknameInscriptionInput" required>
                             </div>
+                            <small class="form-text text-muted">Caractères alphanumériques (tiret et underscore autorisés).</small>
                         </div>
                         <div class="form-group">
                             <label for="passwordInscriptionInput" class="form-control-label">Mot de passe</label>
