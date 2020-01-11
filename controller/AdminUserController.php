@@ -42,6 +42,9 @@ class AdminUserController
         $myAdmin = new UserManager();
         $myAdmin->addUser($user);
 
+        $_SESSION['nickname'] = $_POST['nicknameInscriptionInput'];
+        $_SESSION['password'] = $_POST['passwordInscriptionInput'];
+
         header('Location: ./index.php?newUserSuccessMessage=1');
     }
 

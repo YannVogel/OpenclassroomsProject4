@@ -9,7 +9,7 @@ if (isset($_GET['newUserSuccessMessage']) AND $_GET['newUserSuccessMessage'] ===
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Fermer</span>
         </button>
-        <strong>Réussite !</strong> Votre profil a bien été créé ! Vous pouvez à présent vous connecter.
+        <strong>Réussite !</strong> Votre profil a bien été créé ! Vous pouvez maintenant profiter pleinement du site.
     </div>
     <?php
 }
