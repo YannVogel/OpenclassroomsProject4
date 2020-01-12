@@ -205,19 +205,19 @@ $('nav.nav-tabs a').on('click', function(e) {
 
 $('#tab1').on('click', function() {
     Storage.setSession('activeTab', '1')
-})
+});
 
 $('#tab2').on('click', function() {
     Storage.setSession('activeTab', '2')
-})
+});
 
 $('#tab3').on('click', function() {
     Storage.setSession('activeTab', '3')
-})
+});
 
 $('#tab4').on('click', function() {
     Storage.setSession('activeTab', '4')
-})
+});
 
 if(Storage.getSession('activeTab') === '2') {
     ActiveTab.setActive('2');
